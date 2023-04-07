@@ -57,92 +57,90 @@ function serve(){
 
 function html(){
     panini.refresh()
-    return src(path.src.html, {base: srcPath})
-    .pipe(plumber())
-    .pipe(panini({
-        root: srcPath,
-        layouts: srcPath + "tpl/layouts/",
-        partials: srcPath + "tpl/partials/",
-        data: srcPath + "tpl/data/",
-    }))
-    .pipe(dest(path.build.html))
-    .pipe(browserSync.reload({stream: true}));
-};
+        return src(path.src.html, {base: srcPath})
+        .pipe(plumber())
+        .pipe(panini({
+            root: srcPath,
+            layouts: srcPath + "tpl/layouts/",
+            partials: srcPath + "tpl/partials/",
+            data: srcPath + "tpl/data/",
+        }))
+        .pipe(dest(path.build.html))
+        .pipe(browserSync.reload({stream: true}));
+    };
 
 function css(){
-    return src(path.src.css, {base: srcPath + "assets/scss/"})
-    .pipe(plumber({
-        errorHandler : function(err){
-notify.onError({
-    title: "Scss Error",
-    message: "Error: <%= error.message %>"
-})(err);
-this.emit('end');
-        }
-}))
-    .pipe(sass())
-    .pipe(autoprefixer({
-        grid: true,
-}))
-    .pipe(cssbeautify())
-    .pipe(dest(path.build.css))
-    .pipe(cssnano({
-        zIndex: false,
-        discardComments:{
-            removeAll: true
-        }
-}))
-    .pipe(removeComments())
-    .pipe(rename({
-        suffix: ".min",
-        extname: ".css"
-    }
+            return src(path.src.css, {base: srcPath + "assets/scss/"})
+            .pipe(plumber({
+                errorHandler : function(err){
+        notify.onError({
+            title: "Scss Error",
+            message: "Error: <%= error.message %>"
+        })(err);
+        this.emit('end');
+                }
+        }))
+            .pipe(sass())
+            .pipe(autoprefixer({grid: true}))
+            .pipe(cssbeautify())
+            .pipe(dest(path.build.css))
+            .pipe(cssnano({
+                zIndex: false,
+                discardComments:{
+                    removeAll: true
+                }
+        }))
+            .pipe(removeComments())
+            .pipe(rename({
+                suffix: ".min",
+                extname: ".css"
+            }
 
-    ))
-    .pipe(dest(path.build.css))
-    .pipe(browserSync.reload({stream: true}));
-}
-
-function js(){
-    return src(path.src.js, {base: srcPath + "assets/js/"})
-    .pipe(plumber({
-        errorHandler : function(err){
-notify.onError({
-    title: "JS Error",
-    message: "Error: <%= error.message %>"
-})(err);
-this.emit('end');
+            ))
+            .pipe(dest(path.build.css))
+            .pipe(browserSync.reload({stream: true}));
         }
-}
 
-    ))
-    .pipe(rigger())
-    .pipe(dest(path.build.js))
-    .pipe(uglify())
-    .pipe(rename({
-        suffix: ".min",
-        extname: ".js"
-    }))
-    .pipe(dest(path.build.js))
-    .pipe(browserSync.reload({stream: true}));
-}
+        function js(){
+            return src(path.src.js, {base: srcPath + "assets/js/"})
+            .pipe(plumber({
+                errorHandler : function(err){
+        notify.onError({
+            title: "JS Error",
+            message: "Error: <%= error.message %>"
+        })(err);
+        this.emit('end');
+                }
+        }
+
+            ))
+            .pipe(rigger())
+            .pipe(dest(path.build.js))
+            .pipe(uglify())
+            .pipe(rename({
+                suffix: ".min",
+                extname: ".js"
+            }))
+            .pipe(dest(path.build.js))
+            .pipe(browserSync.reload({stream: true}));
+        }
 
 function images(){
-    return src(path.src.images, {base: srcPath + "assets/images/"})
-    .pipe(imagemin([
-        imagemin.gifsicle({interlaced: true}),
-        imagemin.mozjpeg({quality: 80, progressive: true}),
-        imagemin.optipng({optimizationLevel: 5}),
-        imagemin.svgo({
-            plugins: [
-                {removeViewBox: true},
-                {cleanupIDs: false}
-            ]
-        })
-    ]))
-    .pipe(dest(path.build.images))
-    .pipe(browserSync.reload({stream: true}));
-}   
+            return src(path.src.images, {base: srcPath + "assets/images/"})
+            .pipe(imagemin([
+                imagemin.gifsicle({interlaced: true}),
+                imagemin.mozjpeg({quality: 80, progressive: true}),
+                imagemin.optipng({optimizationLevel: 5}),
+                imagemin.svgo({
+                    plugins: [
+                        {removeViewBox: true},
+                        {cleanupIDs: false}
+                    ]
+                })
+            ]))
+            .pipe(dest(path.build.images))
+            .pipe(browserSync.reload({stream: true}));
+        }   
 
 function clean(){
     return del(path.clean)
