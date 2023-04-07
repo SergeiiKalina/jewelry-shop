@@ -1,7 +1,7 @@
 "use strict"
 
-const {src, dest} = require("gulp");
 const gulp = require("gulp");
+const {src, dest} = gulp;
 const autoprefixer = require("gulp-autoprefixer");
 const cssbeautify = require("gulp-cssbeautify");
 const removeComments = require('gulp-strip-css-comments');
