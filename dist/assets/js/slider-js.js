@@ -198,39 +198,6 @@ self.disabled = true;
     })
 })
 
-
-
-const star = document.querySelector('.previy_block1_stars');
-star.addEventListener('click', (e) => {
-  let target = e.target;
- for(let i = 0;i <= 4; i++ ){
-  star.children[i].style.color = 'black'
- }
-  if(target === star.children[0]){
-    star.children[0].style.color = 'gold';
-  }
-  if(target === star.children[1]){
-    for(let i = 0; i <= 1; i++){
-      star.children[i].style.color = 'gold';
-    }
-  }
-  if(target === star.children[2]){
-    for(let i = 0; i <= 2; i++){
-      star.children[i].style.color = 'gold';
-    }
-  }
-  if(target === star.children[3]){
-    for(let i = 0; i <= 3; i++){
-      star.children[i].style.color = 'gold';
-    }
-  }
-  if(target === star.children[4]){
-    for(let i = 0; i <= 4; i++){
-      star.children[i].style.color = 'gold';
-    }
-  }
-  
-})
 ////TABS //////
 
 
@@ -263,10 +230,12 @@ triggerItem.forEach(item => {
     let el = target.closest('.tabs-trigger__block')
     el.querySelector('.tabs-txt__item').classList.add('activ')
     el.classList.add('activ')
-    console.log(el)
+    
   })
 })
 
+
+//////   РАзвертывание текста  три точки   //////////
 const txtBtn = document.getElementById('dotsbtn');
 txtBtn.addEventListener('click', () => {
   const more = document.querySelector('.more');
@@ -274,3 +243,193 @@ txtBtn.addEventListener('click', () => {
   more.classList.toggle('activ');
   dots.classList.toggle('activ')
 })
+
+/////////RATING STARS ///////////
+const ratings = document.querySelectorAll('.rating');
+
+if(ratings.length > 0){
+  initRatings()
+}
+
+function initRatings(){
+  let ratingActiv, ratingValue;
+  for( let index = 0; index < ratings.length; index++){
+    const rating = ratings[index];
+    initRating(rating);
+  }
+
+  function initRating(rating){
+initRatingVars(rating);
+setRatingActivWidth();
+
+if(rating.classList.contains('rating_set')){
+  setRating(rating);
+}
+
+  }
+  function initRatingVars(rating){
+    ratingActiv = rating.querySelector('.rating_activ');
+    ratingValue = rating.querySelector('.rating_value');
+  }
+  function setRatingActivWidth(index = ratingValue.innerHTML){
+    const ratingActiveWidth = index / 0.05;
+  ratingActiv.style.width = `${ratingActiveWidth}%`;
+  }
+
+function setRating(rating){
+  const ratingItems = rating.querySelectorAll('.rating_item');
+for(let index = 0; index < ratingItems.length; index++){
+  const ratingItem = ratingItems[index];
+ratingItem.addEventListener('mouseenter', function (e){
+  initRatingVars(rating)
+  setRatingActivWidth(ratingItem.value);
+
+});
+ratingItem.addEventListener('mouseleave', function(e){
+  setRatingActivWidth();
+});
+ratingItem.addEventListener('click', function (e){
+  initRatingVars(rating);
+  if(rating.dataset.ajax){
+    setRatingValue(ratingItem.value, rating);
+  }else{
+    ratingValue.innerHTML = index + 1;
+    setRatingActivWidth()
+  }
+})
+
+}
+}
+
+}
+
+///// COMMENTS////////
+
+const commentButoon = document.getElementById('commetButton');
+const form = document.querySelector('.comment__form');
+commentButoon.addEventListener('click', (e) => {
+  e.preventDefault()
+    let formText = form.querySelector('.comment_text').value;
+    let email = form.querySelector('.comment_email').value;
+    let name = form.querySelector('.comment_name').value;
+    let day = new Date().getDate();
+let month = new Date().getMonth();
+let yers = new Date().getFullYear();
+let checkbox = document.getElementById('checkbox');
+let reviews = document.querySelector('.tab3_review')
+ratValue(reviews)
+const ratingActiveWidth = value / 0.05;
+console.log(value)
+if(!checkbox.checked){
+alert('Need to agree')
+return;
+}
+
+if(name == ''){
+   alert('Enter Name')
+  }
+
+if(validateEmail(email)){
+email = email;
+}
+if(!validateEmail(email)){
+  alert('wrong email')
+return;
+}else{
+  form.querySelector('.comment_email').style.borderColor = 'red'
+}
+if(month == 0){
+  month = "January,";
+}
+if(month == 1){
+  month = "February,";
+}
+if(month == 2){
+  month = "March,";
+}
+if(month == 3){
+  month = "April,";
+}
+if(month == 4){
+  month = "May,";
+}
+if(month == 5){
+  month = "June,";
+}
+if(month == 6){
+  month = "July,";
+}
+if(month == 7){
+  month = "August,";
+}
+if(month == 8){
+  month = "September,";
+}
+if(month == 9){
+  month = "October,";
+}
+if(month == 10){
+  month = "November,";
+}
+if(month == 11){
+  month = "December,";
+}
+if(formText.trim() == ''){
+  alert('Comment is empty')
+  return
+}
+
+let date = String(day) + ' ' + String(month) + ' ' + String(yers);
+    document.querySelector('.all__comment').insertAdjacentHTML('afterbegin', generateComment(formText, email, name, date, ratingActiveWidth, value))
+    qualityComment()
+    })
+
+ 
+function generateComment(formText, email, name, date, ratingActiveWidth, value){
+  return `<div class="comment_block">
+  <div class="comment_comment">
+      <div class="comment_name">${name}<span>${date}</span></div>
+      <div class="comment_stars"><div class="rating rating_set">
+      <div class="rating__body">
+          <div class="rating_activ" style="width: ${ratingActiveWidth}%"></div>
+          <div class="rating_items">
+              <input type="radio" class="rating_item" value="1" name="rating">
+              <input type="radio" class="rating_item" value="2" name="rating">
+              <input type="radio" class="rating_item" value="3" name="rating">
+              <input type="radio" class="rating_item" value="4" name="rating">
+              <input type="radio" class="rating_item" value="5" name="rating">
+          </div>
+      </div>
+      <div class="rating_value">${value}</div>
+  </div></div>
+      <div class="comment_text">${formText}</div>
+  </div>
+</div>`
+
+}
+
+let value;
+const ratValue = (reviews) => {
+ 
+let input = reviews.querySelectorAll('input')
+for(let item of input){
+ if(item.checked){
+  value = item.value;
+ }
+}
+}
+
+const validateEmail = (email) => {
+  return email.match(
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  );
+};
+
+const qualityComment = () =>{
+  let coments = document.querySelectorAll('.comment_block');
+  let quantity = document.querySelector('.reviews_quantity span')
+  let qualityHead = document.querySelector('.comment_head span')
+  quantity.textContent = coments.length;
+  qualityHead.textContent = coments.length;
+}
+qualityComment()

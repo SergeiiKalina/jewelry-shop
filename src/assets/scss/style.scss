@@ -9,7 +9,7 @@ body.lock{
 }
 .wrapper{
     min-height: 100%;
-    background: #000000;
+    background: #FFFFFF;
  overflow: hidden;
 }
 .container{
@@ -18,6 +18,10 @@ body.lock{
   margin: 0 auto;
 padding: 0 6%;
 }
+
+$colorname: #000000;
+$colortext: #707070;
+$colorBbutton: #000000;
 
 $maxWidth: 1440;
 @mixin adaptiv-font($pcSize, $mobSize){
@@ -29,6 +33,169 @@ $maxWidth: 1440;
     @media(min-width: 767px){
         font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidth}));
     }
+}
+.table_index{
+    @include adaptiv-font(16, 12);
+color: #000000;
+padding: 10px 0 0 0;
+span{
+    color: $colortext;
+    padding: 0 0 0 5px;
+}
+}
+.tab3_comment{
+    width: 50%;
+    .comment_head{
+        @include adaptiv-font(20, 16);
+        color: $colorname;
+        padding: 42px 0 0 0;
+    }
+    .comment_name{
+        padding: 76px 0 0 0;
+        color: $colorname;
+        @include adaptiv-font(20, 16);
+        span {
+            padding: 0 0 0 16px;
+            @include adaptiv-font(14, 12);
+color: $colortext;
+        }
+    }
+    .comment_stars{
+        @include adaptiv-font(20, 16);
+        color: $colorname;
+        padding: 16px 0 0 0;
+    }
+    .comment_text{
+        @include adaptiv-font(16, 12);
+        padding: 24px 0 0 0; 
+        width: 100%;
+    }
+}
+.rating {
+    display: flex;
+    align-items: flex-end;
+    @include adaptiv-font(22, 18);
+    line-height: 0.75;
+    padding: 17px 0 0 0;
+    .rating__body {
+        position: relative;
+    }
+    .rating__body::before{
+        content: '☆☆☆☆☆';
+        display: block;
+    }
+    .rating_activ {
+        position: absolute;
+        width: 0%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+    }
+    .rating_activ::before{
+        content: '★★★★★';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        color: $colorname;
+    }
+    .rating_items {
+        display: flex;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+    .rating_item {
+        flex: 0 0 20%;
+        height: 100%;
+        opacity: 0;
+    }
+    .rating_value {
+        @include adaptiv-font(12, 10);
+        line-height: 1;
+        padding-left: 10px;
+        display: none;
+    }
+}
+.tab3_review {
+    padding: 42px 0 0 88px;
+    .review_head {
+        @include adaptiv-font(20, 16);
+        color: $colorname;
+        span {
+            @include adaptiv-font(13, 10);
+            color: $colortext;
+            padding: 11px 0 0 0;
+            line-height: 30px;
+            text-transform: capitalize;
+        }
+    }
+ 
+    .review_form {
+        padding: 46px 0 0 0;
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 13px 0 0 0;
+        .form_comment{
+            margin: 32px 0 0 0;
+            padding: 12px 0 13px 10px;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid #D8D8D8;
+        }
+
+        .label{
+            display: flex;
+            padding: 24px 0 0 0;
+            label{
+                display: flex;
+                @include adaptiv-font(12, 10);
+                align-items: center;
+            }
+            .form_comment{
+                width: 18px;
+                height: 18px;
+                margin: 0 6px 0 0;
+            }
+        }
+        .review_form_rating{
+            padding: 44px 0 0 0;
+        }
+        button{
+            display: flex;
+            width: 20%;
+            @include adaptiv-font(16, 12);
+            padding: 8px 33px;
+            justify-content: center;
+            background: $colorBbutton;
+            color: #FFF;
+            border-radius: 4px;
+            margin: 48px 0 0 0;
+            cursor: pointer;
+        }
+}
+        .rating{
+        padding: 14px 0 0 0;
+        }
+    }
+}
+.previy_block1_info{
+    .rating {
+        padding: 0;
+    }
+    .previy_block1_stars{
+        .rating{
+            align-items: center;
+        }
+    }
+}
+.tab-3__block{
+    display: flex;
 }
 
 .header__block{
@@ -1442,7 +1609,7 @@ padding: 0 0 23px 64px;
     font-weight: 500;
 text-transform: capitalize;
 color: #A18A68;
-padding: 0 0 70px 64px;
+padding: 0 0 60px 64px;
 }
 .previy_block1_stars{
     width: 100%;
