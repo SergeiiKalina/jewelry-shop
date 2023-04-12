@@ -50,6 +50,7 @@ body.lock {
 }
 
 .tab3_comment .comment_head {
+    display: flex;
     color: #000000;
     padding: 42px 0 0 0;
 }
@@ -64,6 +65,14 @@ body.lock {
     .tab3_comment .comment_head {
         font-size: calc(16px + 4 * (100vw / 1440));
     }
+}
+
+.tab3_comment .comment_head span {
+    padding: 0 5px 0 0;
+}
+
+.tab3_comment .comment_head div {
+    padding: 0 0 0 5px;
 }
 
 .tab3_comment .comment_name {
@@ -337,6 +346,18 @@ body.lock {
 
 .previy_block1_info .previy_block1_stars .rating {
     align-items: center;
+}
+
+.accordion-item--active .accordion-item__content {
+    display: block;
+}
+
+.accordion {
+    display: flex;
+}
+
+.accordion-item {
+    margin: 0 96px 0 0;
 }
 
 .tab-3__block {
@@ -4078,6 +4099,20 @@ main img {
 }
 
 @media (max-width: 550px) {
+    .tab3_review {
+        position: relative;
+        padding: 0;
+        z-index: 13;
+    }
+
+    .tab3_comment {
+        width: 100%;
+    }
+
+    .tab-3__block {
+        flex-direction: column;
+    }
+
     .similar_title {
         padding: 4px 0 6px 0;
     }
@@ -4093,13 +4128,6 @@ main img {
 
     .price__button {
         width: 90%;
-    }
-
-    .tabs-content {
-        opacity: 0;
-        visibility: hidden;
-        padding: 0;
-        height: 0;
     }
 
     .tabs-trigger__block {

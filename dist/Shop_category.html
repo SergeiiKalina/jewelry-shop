@@ -13,190 +13,185 @@
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
       </head>
 <body>
-    
-    <div class="wrapper">
-    <header class="header">
-        <div class="container">
-            <div class="header__block">
-            <div class="header__logo">
-                <a href="index.html"><img src="assets/images/icon/SHOPPE.png" alt="logo"></a>
-            </div>
-            <div class="header__menu">
-                <div class="menu__icon">
-                    <span></span>
-                </div>
-                <nav class="menu__body hidden">
-                <ul class="header__menu_list" id="menu">
-                    <li class="mobile li_before"><input type="search" class="mobile__menu_search" placeholder="Search"></li>
-                    <li class="mobile"><a href="">Home</a></li>
-                    <li class="menu__sublist" id="shop"><a href="#"><span class="target">Shop</span></a>
-                        <div class="menu__sublist_block">
-                    <ul class="menu__sublist_item"><li class="menu__sublist_header">SHOP TYPES</li>
-                       <li><a href="">Shop full width</a></li>
-                       <li><a href="">Shop With sidebar</a></li>
-                       <li><a href="./Shop_category.html">Shop category</a></li>
-                       <li><a href="">Shop carousel</a></li>
-                       <li><a href="">Masonry grid</a></li>
-                    </ul>
-                    <ul class="menu__sublist_item"><li class="menu__sublist_header">SINGLE PRODUCT</li>
-                        <li><a href="">Standard product</a></li>
-                        <li><a href="">Variable product</a></li>
-                        <li><a href="">On sale product</a></li>
-                        <li><a href="">Out of stock product</a></li>
-                        <li><a href="">New! Product</a></li>
-                    </ul>
-                    <ul class="menu__sublist_item"><li class="menu__sublist_header">SHOP PAGES</li>
-                        <li><a href="">Cart</a></li>
-                        <li><a href="">Checkout</a></li>
-                        <li><a href="">My account</a></li>
-                        <li><a href="">Wishlist</a></li>
-                        <li><a href="">Order tracking</a></li>
-                    </ul>
-                </div></li>
-                    <li class="mobile"> <a href="">About</a></li>
-                    <li><a href="#"><span class="target">Blog</span></a></li>
-                    <li class="mobile"><a href="#">Help</a></li>
-                    <li class="mobile"> <a href="">Contact</a></li>
-                    <li class="list__border only-pc"><a href="#"><span class="target">Our Story</span></a></li>
-                    <li class="mobile"> <a href="">Search</a></li>
-                    <li class="mobile"><div class="border__list"></div></li>
-                    <li class="mobile"><img src="assets/images/icon/account_icon_black.png" alt="account" class="menu__img"><a href="">My account</a></li>
-                    <li class="mobile"><img src="assets/images/icon/logout_black.png" alt="logout" class="menu__img"><a href="">Logout</a></li>
-                </ul>
-            </nav>
-                <div class="header__bascet">
-                    <div class="header__img mobile_basket">
-                        <img src="assets/images/icon/search_icon_black.png" alt="search">
-                    </div>
-                    <div class="header__img basket fuck_basket">
-                        <div class="basket_quantity">0</div>
-                        <a href="#"><img src="assets/images/icon/basket_icon_black.png" alt="basket">
-                        <div class="basket__circle__block">
-                        <span class="basket_circle"></span><span class="basket_circle"></span></div></a>
-                    </div>
-                    <div class="header__img mobile_basket">
-                        <img src="assets/images/icon/account_icon_black.png" alt="login" class="login">
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-    </header>
-    <div class="container">
-        <div class="filter__header">
-            <div class="filter__header_search"><input type="search" placeholder="Search"></div>
-        <h2 class="filter__head">Shop <span>The Latest</span></h2>
-        <div class="filter_burger">
-            <span></span>
-            <a href="#">Filters</a>
-        </div>
-    </div>
-        <main class="filter_product">
-        <div class="filter">
-            <div class="filter__block hidden">
-            <div class="filter__head_search"><input type="search" placeholder="Search..."><a href="https://www.youtube.com/watch?v=ddbxsrGPRY0" class="search_Button"></a></div>
-    <form class="form" name="form"> 
-    <div class="filter__select">
-        <select name="category" id="shopBy" class="filter__select_item">
-            <option value="" selected>All</option>
-            <option value="1">Earrings</option>
-            <option value="2">Hairpins</option>
-            <option value="4">Pendants</option>
-        </select>
-        </div>
-        <div class="filter__select">
-        <select name="brands">
-            <option value="">All</option>
-            <option value="5">Lira</option>
-            <option value="6">Hal</option>
-            <option value="7">Kaede</option>
-            <option value="8">Yuki Hair</option>
-            <option value="9">Necklace</option>
-    
-        </select>
-    </div>
-            <div class="filter__price">
-                <div class="min-value numberVal">
-                  <span>Price: $</span><input type="number" min="0" max="100" value="0"> 
-                </div>
-            &nbsp; 
-            <div class="range-slider">
-                <div class="progress"></div>
-                <input type="range" class="range-min" min="0" max="100" value="0" step="1"  name="priceMin">
-                <input type="range" class="range-max" min="0" max="100" value="100" step="1" name="priceMax">
-            </div>
-            &nbsp;
-            <div class="max-value numberVal">
-                <span>- $</span><input type="number" min="0" max="100" value="100"><a href="#" id="sort-desc">Filter</a>
-            </div>
-            </div>
-            <div class="block__checkbox">
-           <div class="checkbox__item"><label for="checkbox_1" class="filter__price_label">Ascending</label><input type="checkbox" id="checkbox_1" class="filter__price_input"></div> 
-           <div class="checkbox__item"><label for="checkbox_2" class="filter__price_label1">Descending</label><input type="checkbox" id="checkbox_2" class="filter__price_input"></div></div> 
-           <div class="filter__button"><button class="button__close">Close</button>
-            <button class="button__done">View Product</button>
-           </div>
-           </form>
-    </div>
-    </div>
-        <div class="filter_item">
-            <div class="product_block" id="nav">
-        </div>
-        </div>
-    </main>
-    </div>
-    
-    <div class="bag">
-        <div class="bag_header">Shopping bag</div>
-        <div class="bag_quantity_item">5 items</div>
-        <div class="bag_item block__cards">
-    
-    </div>
-    <div class="bag_footer"><div class="bag_footer_total">
-        <div class="bag_footer_itemquantity">Subtotal <span>(5 items)</span></div>
-        <div class="bag_footer_totalcost">$ 100,00</div></div>
-        <div class="bag_footer_button"><a href="basket.html">VIEW CART</a></div>
-    </div>
-        </div>
-    <div class="container">
-        <footer class="footer">
-        <div class="footer__block">
-            <div class="footer__block_item">
-                <ul class="footer__list">
-                    <li><a href="">CONTACT</a></li>
-                    <li><a href="">TERMS OF SERVICES</a></li>
-                    <li><a href="">SHIPPING AND RETURNS</a></li>
-                </ul>
-                <div class="footer__block__email">
-                    <input type="email" placeholder="Give an email, get the newsletter." class="footer__input__email">
-                    <a href="">→</a>
-                </div>
-           </div>
-        </div>
-        <div class="footer__block">
-            <div class="footer__block_item2">
-                <div class="footer__block_txt">
-                    <p class="footer__block_info">© 2021 Shelly. Terms of use and privacy policy.</p>
-                </div>
-            <div class="footer__block_social">
-                <img src="assets/images/footer/social/In.png" alt="in">
-                <img src="assets/images/footer/social/facebook.png" alt="facebook">
-                <img src="assets/images/footer/social/instagram.png" alt="instagram">
-                <img src="assets/images/footer/social/tweter.png" alt="tweter">
-            </div>
-            
-        </div>
-        </div>
-    
-    </footer>
-    
-    </div>
-    </div>
-    <div class="hidden_basket_block"></div>
-    <script src="assets/js/data.min.js"></script>
-        <script src="assets/js/mobile.js"></script>
-        <script src="assets/js/product_filter.js"></script>
-        <script src="assets/js/script-filter.js"></script>
-</div>
+  <div class="wrapper">
+  
+  <div class="wrapper">
+      <header class="header">
+          <div class="container">
+              <div class="header__block">
+              <div class="header__logo">
+                 <a href="index.html"><img src="assets/images/icon/SHOPPE.png" alt="logo"></a> 
+              </div>
+              <div class="header__menu">
+                  <div class="menu__icon">
+                      <span></span>
+                  </div>
+                  <nav class="menu__body hidden">
+                  <ul class="header__menu_list" id="menu">
+                      <li class="mobile li_before"><input type="search" class="mobile__menu_search" placeholder="Search"></li>
+                      <li class="mobile"><a href="">Home</a></li>
+                      <li class="menu__sublist" id="shop"><a href="#"><span class="target">Shop</span></a>
+                          <div class="menu__sublist_block">
+                      <ul class="menu__sublist_item"><li class="menu__sublist_header">SHOP T YPES</li>
+                         <li><a href="">Shop full width</a></li>
+                         <li><a href="">Shop With sidebar</a></li>
+                         <li><a href="./Shop_category.html">Shop category</a></li>
+                         <li><a href="">Shop carousel</a></li>
+                         <li><a href="">Masonry grid</a></li>
+                      </ul>
+                      <ul class="menu__sublist_item"><li class="menu__sublist_header">SINGLE PRODUCT</li>
+                          <li><a href="">Standard product</a></li>
+                          <li><a href="">Variable product</a></li>
+                          <li><a href="">On sale product</a></li>
+                          <li><a href="">Out of stock product</a></li>
+                          <li><a href="">New! Product</a></li>
+                      </ul>
+                      <ul class="menu__sublist_item"><li class="menu__sublist_header">SHOP PAGES</li>
+                          <li><a href="">Cart</a></li>
+                          <li><a href="">Checkout</a></li>
+                          <li><a href="">My account</a></li>
+                          <li><a href="">Wishlist</a></li>
+                          <li><a href="">Order tracking</a></li>
+                      </ul>
+                  </div></li>
+                      <li class="mobile"> <a href="">About</a></li>
+                      <li><a href="#"><span class="target">Blog</span></a></li>
+                      <li class="mobile"><a href="#">Help</a></li>
+                      <li class="mobile"> <a href="">Contact</a></li>
+                      <li class="list__border only-pc"><a href="#"><span class="target">Our Story</span></a></li>
+                      <li class="mobile"> <a href="">Search</a></li>
+                      <li class="mobile"><div class="border__list"></div></li>
+                      <li class="mobile"><img src="assets/images/icon/account_icon_black.png" alt="account" class="menu__img"><a href="">My account</a></li>
+                      <li class="mobile"><img src="assets/images/icon/logout_black.png" alt="logout" class="menu__img"><a href="">Logout</a></li>
+                  </ul>
+              </nav>
+                  <div class="header__bascet">
+                      <div class="header__img mobile_basket search">
+                          <div class="search_block"><input type="search"><a href=""><img src="assets/images/icon/search_icon_black.png" alt=""></a></div>
+                          <img src="assets/images/icon/search_icon_black.png" alt="search" class="search__img">
+                      </div>
+                      <div class="header__img basket fuck_basket">
+                          <div class="basket_quantity">0</div>
+                          <img src="assets/images/icon/basket_icon_black.png" alt="basket">
+                          <div class="basket__circle__block">
+                          <span class="basket_circle"></span><span class="basket_circle"></span></div>
+                      </div>
+                      <div class="header__img mobile_basket">
+                          <img src="assets/images/icon/account_icon_black.png" alt="login" class="login">
+                      </div>
+                  </div>
+              </div>
+          </div>
+          </div>
+      </header>  <div class="container">
+      <div class="filter__header">
+          <div class="filter__header_search"><input type="search" placeholder="Search"></div>
+      <h2 class="filter__head">Shop <span>The Latest</span></h2>
+      <div class="filter_burger">
+          <span></span>
+          <a href="#">Filters</a>
+      </div>
+  </div>
+      <main class="filter_product">
+      <div class="filter">
+          <div class="filter__block hidden">
+          <div class="filter__head_search"><input type="search" placeholder="Search..."><a href="https://www.youtube.com/watch?v=ddbxsrGPRY0" class="search_Button"></a></div>
+  <form class="form" name="form"> 
+  <div class="filter__select">
+      <select name="category" id="shopBy" class="filter__select_item">
+          <option value="" selected>All</option>
+          <option value="1">Earrings</option>
+          <option value="2">Hairpins</option>
+          <option value="4">Pendants</option>
+      </select>
+      </div>
+      <div class="filter__select">
+      <select name="brands">
+          <option value="">All</option>
+          <option value="5">Lira</option>
+          <option value="6">Hal</option>
+          <option value="7">Kaede</option>
+          <option value="8">Yuki Hair</option>
+          <option value="9">Necklace</option>
+  
+      </select>
+  </div>
+          <div class="filter__price">
+              <div class="min-value numberVal">
+                <span>Price: $</span><input type="number" min="0" max="100" value="0"> 
+              </div>
+          &nbsp; 
+          <div class="range-slider">
+              <div class="progress"></div>
+              <input type="range" class="range-min" min="0" max="100" value="0" step="1"  name="priceMin">
+              <input type="range" class="range-max" min="0" max="100" value="100" step="1" name="priceMax">
+          </div>
+          &nbsp;
+          <div class="max-value numberVal">
+              <span>- $</span><input type="number" min="0" max="100" value="100"><a href="#" id="sort-desc">Filter</a>
+          </div>
+          </div>
+          <div class="block__checkbox">
+         <div class="checkbox__item"><label for="checkbox_1" class="filter__price_label">Ascending</label><input type="checkbox" id="checkbox_1" class="filter__price_input"></div> 
+         <div class="checkbox__item"><label for="checkbox_2" class="filter__price_label1">Descending</label><input type="checkbox" id="checkbox_2" class="filter__price_input"></div></div> 
+         <div class="filter__button"><button class="button__close">Close</button>
+          <button class="button__done">View Product</button>
+         </div>
+         </form>
+  </div>
+  </div>
+      <div class="filter_item">
+          <div class="product_block" id="nav">
+      </div>
+      </div>
+  </main>
+  </div>
+  
+  <div class="bag">
+      <div class="bag_header">Shopping bag</div>
+      <div class="bag_quantity_item">5 items</div>
+      <div class="bag_item block__cards">
+  </div>
+  <div class="bag_footer"><div class="bag_footer_total">
+      <div class="bag_footer_itemquantity">Subtotal <span>(5 items)</span></div>
+      <div class="bag_footer_totalcost">$ 100,00</div></div>
+      <div class="bag_footer_button"><a href="basket.html">VIEW CART</a></div>
+  </div>
+      </div>
+  <div class="hidden_basket_block"></div>
+  <script src="assets/js/data.min.js"></script>
+      <script src="assets/js/mobile.js"></script>
+      <script src="assets/js/product_filter.js"></script>
+      <script src="assets/js/script-filter.js"></script>
+  <div class="container">
+      <footer class="footer">
+      <div class="footer__block">
+          <div class="footer__block_item">
+              <ul class="footer__list">
+                  <li><a href="">CONTACT</a></li>
+                  <li><a href="">TERMS OF SERVICES</a></li>
+                  <li><a href="">SHIPPING AND RETURNS</a></li>
+              </ul>
+              <div class="footer__block__email">
+                  <input type="email" placeholder="Give an email, get the newsletter." class="footer__input__email">
+                  <a href="">→</a>
+              </div>
+         </div>
+      </div>
+      <div class="footer__block">
+          <div class="footer__block_item2">
+              <div class="footer__block_txt">
+                  <p class="footer__block_info">© 2021 Shelly. Terms of use and privacy policy.</p>
+              </div>
+          <div class="footer__block_social">
+              <img src="assets/images/footer/social/In.png" alt="in">
+              <img src="assets/images/footer/social/facebook.png" alt="facebook">
+              <img src="assets/images/footer/social/instagram.png" alt="instagram">
+              <img src="assets/images/footer/social/tweter.png" alt="tweter">
+          </div>  
+      </div>
+      </div>
+  </footer>
+  </div></div>
 </body>
 </html>

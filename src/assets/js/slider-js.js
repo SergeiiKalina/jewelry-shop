@@ -228,7 +228,6 @@ triggerItem.forEach(item => {
       trig.classList.remove('activ')
     }
     let el = target.closest('.tabs-trigger__block')
-    el.querySelector('.tabs-txt__item').classList.add('activ')
     el.classList.add('activ')
     
   })
@@ -319,7 +318,6 @@ let checkbox = document.getElementById('checkbox');
 let reviews = document.querySelector('.tab3_review')
 ratValue(reviews)
 const ratingActiveWidth = value / 0.05;
-console.log(value)
 if(!checkbox.checked){
 alert('Need to agree')
 return;
@@ -383,7 +381,6 @@ let date = String(day) + ' ' + String(month) + ' ' + String(yers);
     document.querySelector('.all__comment').insertAdjacentHTML('afterbegin', generateComment(formText, email, name, date, ratingActiveWidth, value))
     qualityComment()
     })
-
  
 function generateComment(formText, email, name, date, ratingActiveWidth, value){
   return `<div class="comment_block">
@@ -426,10 +423,40 @@ const validateEmail = (email) => {
 };
 
 const qualityComment = () =>{
-  let coments = document.querySelectorAll('.comment_block');
+let tab = document.querySelector('.quantity_comment');
+  let coments = tab.querySelectorAll('.comment_block');
   let quantity = document.querySelector('.reviews_quantity span')
   let qualityHead = document.querySelector('.comment_head span')
+  let reviewName = document.querySelector('.comment_head div')
+  let productName = document.querySelector('.previy_block1_title');
+  reviewName.textContent = productName.textContent;
   quantity.textContent = coments.length;
   qualityHead.textContent = coments.length;
 }
 qualityComment()
+
+const bag = document.querySelector('.basket');
+const bagBlock = document.querySelector('.bag');
+
+document.addEventListener('click', (e) => {
+    let target = e.target;
+   if(target.closest('.fuck_basket')){
+    bagBlock.classList.add('activ')
+    return
+   }if(target.closest('.card_block_hidden')){
+    return
+   }
+if(!target.closest('.bag')){
+    bagBlock.classList.remove('activ')
+    return
+}
+})
+const bagItem = document.querySelector('.block__cards')
+bagItem.addEventListener('click', (e) => {
+    let target = e.target;
+    if(target.className != 'card_block_hidden') return;
+let closest = e.target.closest('.basket_card_item');
+closest.remove()
+updateStorege()
+pricequantity()
+});

@@ -46,9 +46,16 @@ span{
 .tab3_comment{
     width: 50%;
     .comment_head{
+        display: flex;
         @include adaptiv-font(20, 16);
         color: $colorname;
         padding: 42px 0 0 0;
+        span {
+            padding: 0 5px 0 0;
+        }
+        div{
+            padding: 0 0 0 5px;
+        }
     }
     .comment_name{
         padding: 76px 0 0 0;
@@ -193,6 +200,16 @@ form{
             align-items: center;
         }
     }
+}
+
+.accordion-item--active .accordion-item__content{
+display: block;
+}
+.accordion{
+    display: flex;
+}
+.accordion-item{
+    margin: 0 96px 0 0 ;
 }
 .tab-3__block{
     display: flex;
@@ -3307,6 +3324,18 @@ line-height: 26px;
 }
 
 @media(max-width: 550px){
+    .tab3_review {
+        position: relative;
+        padding: 0;
+        z-index: 13;
+    }
+    
+    .tab3_comment{
+        width: 100%;
+    }
+    .tab-3__block{
+        flex-direction: column;
+    }
     .similar_title{
         padding: 4px 0 6px 0;
     }
@@ -3320,12 +3349,6 @@ line-height: 26px;
     }
  .price__button{
         width: 90%;
-    }
-    .tabs-content{
-opacity: 0;
-visibility: hidden;
-padding: 0;
-height: 0;
     }
     .tabs-trigger__block{
         position: relative;
