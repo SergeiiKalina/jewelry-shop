@@ -1207,6 +1207,23 @@ padding: 64px 0 0 0;
 color: #000000;
 padding: 0 0 14px 0;
 }
+.bag{
+    .basket_card_name{
+        @include adaptiv-font(14, 12);
+    }
+    .basket_card_params{
+        @include adaptiv-font(14, 12);
+    }
+    .basket_card_price{
+        @include adaptiv-font(14, 12);
+    }
+}
+.calculated__form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: auto;
+}
 .basket_card_params{
     @include adaptiv-font(16, 12);
 color: #707070;
@@ -1224,10 +1241,7 @@ color: #A18A68;
 color: #000000;
 padding: 15px 0 0 0;
 }
-.calculated__form{
-    display: flex;
-    flex-direction: column;
-}
+
 .basket_total_amount, .basket_calculated{
     font-size: 80%;
     color: #707070;
@@ -1246,12 +1260,12 @@ color: #000000;
 .cards_info_bigBlock{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     border-bottom: 1px solid #D8D8D8;
     padding: 0 0 39px 0;
 }
 .cards_info_block3{
     display: flex;
+    justify-content: space-between;
 }
 .card_info_block2{
     display: flex;
@@ -1283,6 +1297,10 @@ line-height: 21px;
 color: #000000;
 padding: 16px 0;
 cursor: pointer;
+}
+.calculated_button{
+    width: 50%;
+    margin-left: auto;
 }
 .basket_cards_price_total{
     padding: 42px 0 0 0;
@@ -1545,7 +1563,7 @@ padding: 21px 0 ;
        display: none;
     }
     .search_block.activ{
-      display: block;
+      display: flex;
     }
     .search_block input{
         width: 200px;
@@ -1998,6 +2016,13 @@ padding: 0 0 0 70px;
     }
 }
 @media(max-width: 1248px){
+    .calculated_button{
+        width: 70%;
+        margin-left: auto;
+    }
+    .calculated__form{
+        width: 70%;
+    }
     .block1__previy{
         display: flex;
         flex-direction: column;
@@ -2509,6 +2534,15 @@ margin-left: -15px;
     }
 }
 @media(max-width: 767px){
+    .calculated__form{
+        width: 100%;
+    }
+    .cards_info_bigBlock{
+        display: flex;
+        flex-direction: row;
+        border-bottom: 1px solid #D8D8D8;
+        padding: 0 0 39px 0;
+    }
     .product_block_item_name{
         padding: 6px 0 4px 0;
     margin: 0;

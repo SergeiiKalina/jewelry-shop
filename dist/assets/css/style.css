@@ -1598,6 +1598,49 @@ main img {
     }
 }
 
+@media (max-width: 767px) {
+    .bag .basket_card_name {
+        font-size: calc(12px + 3.4 * ((100vw - 320px) / 1440));
+    }
+}
+
+@media (min-width: 767px) {
+    .bag .basket_card_name {
+        font-size: calc(12px + 2 * (100vw / 1440));
+    }
+}
+
+@media (max-width: 767px) {
+    .bag .basket_card_params {
+        font-size: calc(12px + 3.4 * ((100vw - 320px) / 1440));
+    }
+}
+
+@media (min-width: 767px) {
+    .bag .basket_card_params {
+        font-size: calc(12px + 2 * (100vw / 1440));
+    }
+}
+
+@media (max-width: 767px) {
+    .bag .basket_card_price {
+        font-size: calc(12px + 3.4 * ((100vw - 320px) / 1440));
+    }
+}
+
+@media (min-width: 767px) {
+    .bag .basket_card_price {
+        font-size: calc(12px + 2 * (100vw / 1440));
+    }
+}
+
+.calculated__form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: auto;
+}
+
 .basket_card_params {
     color: #707070;
     padding: 0 0 5px 0;
@@ -1652,11 +1695,6 @@ main img {
     }
 }
 
-.calculated__form {
-    display: flex;
-    flex-direction: column;
-}
-
 .basket_total_amount, .basket_calculated {
     font-size: 80%;
     color: #707070;
@@ -1679,13 +1717,13 @@ main img {
 .cards_info_bigBlock {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     border-bottom: 1px solid #D8D8D8;
     padding: 0 0 39px 0;
 }
 
 .cards_info_block3 {
     display: flex;
+    justify-content: space-between;
 }
 
 .card_info_block2 {
@@ -1721,6 +1759,11 @@ main img {
     color: #000000;
     padding: 16px 0;
     cursor: pointer;
+}
+
+.calculated_button {
+    width: 50%;
+    margin-left: auto;
 }
 
 .basket_cards_price_total {
@@ -2020,7 +2063,7 @@ main img {
 }
 
 .search_block.activ {
-    display: block;
+    display: flex;
 }
 
 .search_block input {
@@ -2585,6 +2628,15 @@ main img {
 }
 
 @media (max-width: 1248px) {
+    .calculated_button {
+        width: 70%;
+        margin-left: auto;
+    }
+
+    .calculated__form {
+        width: 70%;
+    }
+
     .block1__previy {
         display: flex;
         flex-direction: column;
@@ -3172,6 +3224,17 @@ main img {
 }
 
 @media (max-width: 767px) {
+    .calculated__form {
+        width: 100%;
+    }
+
+    .cards_info_bigBlock {
+        display: flex;
+        flex-direction: row;
+        border-bottom: 1px solid #D8D8D8;
+        padding: 0 0 39px 0;
+    }
+
     .product_block_item_name {
         padding: 6px 0 4px 0;
         margin: 0;
