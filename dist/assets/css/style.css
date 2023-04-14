@@ -348,6 +348,336 @@ body.lock {
     align-items: center;
 }
 
+.account {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 128px 0 0 0;
+}
+
+.account__header {
+    margin: 0 auto;
+}
+
+.tabs_account {
+    position: relative;
+    z-index: 13;
+}
+
+.tabs_account .account_tabs_items {
+    display: flex;
+    max-width: 500px;
+    height: 60px;
+    background: #EFEFEF;
+    margin: 0 auto;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 767px) {
+    .tabs_account .account_tabs_items {
+        font-size: calc(14px + 3.4 * ((100vw - 320px) / 1440));
+    }
+}
+
+@media (min-width: 767px) {
+    .tabs_account .account_tabs_items {
+        font-size: calc(14px + 2 * (100vw / 1440));
+    }
+}
+
+.tabs_account .account_tabs_items .account_tabs_item {
+    display: flex;
+    width: 49%;
+    justify-content: center;
+}
+
+.tabs_account .tabs_account_item.activ {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 236px;
+    height: 50px;
+    background: #FFFFFF;
+}
+
+.tabs_account a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.tabs_account .account_tabs_content {
+    display: flex;
+    justify-content: center;
+}
+
+.tabs_account .account_tabs_item.activ {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    background: #FFFFFF;
+    border-radius: 5px;
+}
+
+.tabs_account .account_tabs_content {
+    margin: 0 auto;
+}
+
+.tabs_account .account_tabs_content .register {
+    width: 490px;
+    display: none;
+    flex-direction: column;
+}
+
+.tabs_account .account_tabs_content .register .singin_input {
+    width: 98%;
+    padding: 12px 0;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #D8D8D8;
+    color: #707070;
+}
+
+@media (max-width: 767px) {
+    .tabs_account .account_tabs_content .register .singin_input {
+        font-size: calc(14px + 3.4 * ((100vw - 320px) / 1440));
+    }
+}
+
+@media (min-width: 767px) {
+    .tabs_account .account_tabs_content .register .singin_input {
+        font-size: calc(14px + 2 * (100vw / 1440));
+    }
+}
+
+.tabs_account .account_tabs_content .register .singin_input:nth-child(1) {
+    margin: 114px 0 0 0;
+}
+
+.tabs_account .account_tabs_content .register .singin_input:nth-child(2) {
+    margin: 34px 0 0 0;
+}
+
+.tabs_account .account_tabs_content .register .singin_checkbox {
+    margin: 0 8px 0 0;
+}
+
+.tabs_account .account_tabs_content .register label {
+    color: #000000;
+}
+
+@media (max-width: 767px) {
+    .tabs_account .account_tabs_content .register label {
+        font-size: calc(14px + 3.4 * ((100vw - 320px) / 1440));
+    }
+}
+
+@media (min-width: 767px) {
+    .tabs_account .account_tabs_content .register label {
+        font-size: calc(14px + 2 * (100vw / 1440));
+    }
+}
+
+.tabs_account .account_tabs_content .register div {
+    padding: 15px 0 69px 0;
+}
+
+.tabs_account .account_tabs_content .register button {
+    border: none;
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 16px 0;
+    border-radius: 5px;
+}
+
+@media (max-width: 767px) {
+    .tabs_account .account_tabs_content .register button {
+        font-size: calc(14px + 3.4 * ((100vw - 320px) / 1440));
+    }
+}
+
+@media (min-width: 767px) {
+    .tabs_account .account_tabs_content .register button {
+        font-size: calc(14px + 2 * (100vw / 1440));
+    }
+}
+
+.tabs_account .account_tabs_content .register a {
+    text-align: center;
+    padding: 12px 0 0 0;
+}
+
+@media (max-width: 767px) {
+    .tabs_account .account_tabs_content .register a {
+        font-size: calc(14px + 3.4 * ((100vw - 320px) / 1440));
+    }
+}
+
+@media (min-width: 767px) {
+    .tabs_account .account_tabs_content .register a {
+        font-size: calc(14px + 2 * (100vw / 1440));
+    }
+}
+
+.tabs_account .account_tabs_content .singin {
+    width: 490px;
+    display: none;
+    flex-direction: column;
+}
+
+.tabs_account .account_tabs_content .singin .singin_input {
+    width: 98%;
+    padding: 12px 0;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #D8D8D8;
+    color: #707070;
+}
+
+@media (max-width: 767px) {
+    .tabs_account .account_tabs_content .singin .singin_input {
+        font-size: calc(14px + 3.4 * ((100vw - 320px) / 1440));
+    }
+}
+
+@media (min-width: 767px) {
+    .tabs_account .account_tabs_content .singin .singin_input {
+        font-size: calc(14px + 2 * (100vw / 1440));
+    }
+}
+
+.tabs_account .account_tabs_content .singin .singin_input:nth-child(1) {
+    margin: 114px 0 0 0;
+}
+
+.tabs_account .account_tabs_content .singin .singin_input:nth-child(2) {
+    margin: 34px 0 0 0;
+}
+
+.tabs_account .account_tabs_content .singin .singin_checkbox {
+    margin: 0 8px 0 0;
+}
+
+.tabs_account .account_tabs_content .singin label {
+    color: #000000;
+}
+
+@media (max-width: 767px) {
+    .tabs_account .account_tabs_content .singin label {
+        font-size: calc(14px + 3.4 * ((100vw - 320px) / 1440));
+    }
+}
+
+@media (min-width: 767px) {
+    .tabs_account .account_tabs_content .singin label {
+        font-size: calc(14px + 2 * (100vw / 1440));
+    }
+}
+
+.tabs_account .account_tabs_content .singin div {
+    padding: 15px 0 69px 0;
+}
+
+.tabs_account .account_tabs_content .singin button {
+    border: none;
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 16px 0;
+    border-radius: 5px;
+}
+
+@media (max-width: 767px) {
+    .tabs_account .account_tabs_content .singin button {
+        font-size: calc(14px + 3.4 * ((100vw - 320px) / 1440));
+    }
+}
+
+@media (min-width: 767px) {
+    .tabs_account .account_tabs_content .singin button {
+        font-size: calc(14px + 2 * (100vw / 1440));
+    }
+}
+
+.tabs_account .account_tabs_content .singin a {
+    text-align: center;
+    padding: 12px 0 0 0;
+}
+
+@media (max-width: 767px) {
+    .tabs_account .account_tabs_content .singin a {
+        font-size: calc(14px + 3.4 * ((100vw - 320px) / 1440));
+    }
+}
+
+@media (min-width: 767px) {
+    .tabs_account .account_tabs_content .singin a {
+        font-size: calc(14px + 2 * (100vw / 1440));
+    }
+}
+
+.tabs_account .account_tabs_content .singin.activ {
+    display: flex;
+}
+
+.tabs_account .account_tabs_content .register.activ {
+    display: flex;
+}
+
+.account.activ {
+    padding: 111px 0 0 0;
+}
+
+.blog {
+    position: relative;
+}
+
+.blog_sublist {
+    position: absolute;
+    top: 113px;
+    left: 980px;
+    list-style: none;
+    background: #FFFFFF;
+    color: #707070;
+    padding: 24px 24px 24px 18px;
+    border: 1px solid #D8D8D8;
+    z-index: 14;
+}
+
+@media (max-width: 767px) {
+    .blog_sublist {
+        font-size: calc(12px + 3.4 * ((100vw - 320px) / 1440));
+    }
+}
+
+@media (min-width: 767px) {
+    .blog_sublist {
+        font-size: calc(12px + 2 * (100vw / 1440));
+    }
+}
+
+.blog_sublist li {
+    margin: 8px 0 0 0;
+    cursor: pointer;
+}
+
+.blog_sublist .blog_sub_sublist {
+    position: relative;
+    display: none;
+    list-style: none;
+    padding: 0;
+    color: #000000;
+}
+
+.blog_sublist .standard_sublist.activ {
+    display: block;
+}
+
+.blog_sublist .post_sublist.activ {
+    display: block;
+}
+
 .accordion-item--active .accordion-item__content {
     display: block;
 }
@@ -932,6 +1262,7 @@ main img {
     visibility: visible;
     opacity: 1;
     animation: moveFromLeft 400ms ease;
+    z-index: 14;
 }
 
 .show {

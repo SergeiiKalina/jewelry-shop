@@ -8,13 +8,18 @@ const head = document.querySelector('.header__block');
 const subMenu = document.querySelector('.menu__sublist_block');
 const shop = document.getElementById('shop');
 const basket = document.querySelector('.basket');
-
+const accountHeader = document.querySelector('.account')
 
 
 document.addEventListener('click', (e) => {
     let target = e.target;
     if(target.closest('.menu__sublist')){
+        if(headBasket){
         headBasket.classList.add('activ')
+        }
+        if(accountHeader){
+            accountHeader.classList.add('activ')   
+        }
         subMenu.classList.add('activ')
         head.classList.add('activ')
         shop.classList.add('activ')
@@ -24,7 +29,13 @@ document.addEventListener('click', (e) => {
         return
     }
     if(!target.closest('.menu__sublist_block')){
-        headBasket.classList.remove('activ')
+        if(headBasket){
+            headBasket.classList.remove('activ')
+            }
+       
+            if(accountHeader){
+                accountHeader.classList.remove('activ')   
+            }
         subMenu.classList.remove('activ')
         head.classList.remove('activ')
         shop.classList.remove('activ')

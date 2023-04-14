@@ -202,6 +202,193 @@ form{
     }
 }
 
+.account{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 128px 0 0 0;
+}
+.account__header{
+    margin: 0 auto;
+}
+.tabs_account{
+    position: relative;
+    z-index: 13;
+    .account_tabs_items{
+        display: flex;
+        max-width: 500px;
+        height: 60px;
+        background: #EFEFEF;
+        margin: 0 auto;
+        @include adaptiv-font(16, 14);
+        border-radius: 8px;
+        align-items: center;
+        justify-content: center;
+        .account_tabs_item{
+            display: flex;
+            width: 49%;
+            justify-content: center;
+        }
+    }
+    .tabs_account_item.activ{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 236px;
+        height: 50px;
+        background: #FFFFFF;
+    }
+    a{
+        text-decoration: none;
+        color: $colorname;
+    }
+    .account_tabs_content{
+        display: flex;
+       justify-content: center;
+    }
+ .account_tabs_item.activ{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    background: #FFFFFF;
+    border-radius: 5px;
+ }
+ .account_tabs_content{
+  margin: 0 auto;
+    .register{
+        width: 490px;
+        display: none;
+        flex-direction: column;
+        .singin_input{
+        width: 98%;
+        padding: 12px 0;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid #D8D8D8;
+        @include adaptiv-font(16, 14);
+color: #707070;
+        }
+        .singin_input:nth-child(1){
+            margin: 114px 0 0 0;
+        }
+        .singin_input:nth-child(2){
+            margin: 34px 0 0 0;
+        }
+        .singin_checkbox{
+            margin: 0 8px 0 0;
+        }
+        label{
+            @include adaptiv-font(16, 14);
+color: #000000;
+        }
+        div{
+            padding: 15px 0 69px 0;
+        }
+        button{
+            border: none;
+            background-color: $colorBbutton;
+            @include adaptiv-font(16, 14);
+            color: #FFFFFF;
+            padding: 16px 0;
+            border-radius: 5px;
+        }
+        a{
+            text-align: center;
+            @include adaptiv-font(16, 14);  
+            padding: 12px 0 0 0; 
+        }
+    }
+    .singin{
+        width: 490px;
+        display: none;
+        flex-direction: column;
+        .singin_input{
+        width: 98%;
+        padding: 12px 0;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid #D8D8D8;
+        @include adaptiv-font(16, 14);
+color: #707070;
+        }
+        .singin_input:nth-child(1){
+            margin: 114px 0 0 0;
+        }
+        .singin_input:nth-child(2){
+            margin: 34px 0 0 0;
+        }
+        .singin_checkbox{
+            margin: 0 8px 0 0;
+        }
+        label{
+            @include adaptiv-font(16, 14);
+color: #000000;
+        }
+        div{
+            padding: 15px 0 69px 0;
+        }
+        button{
+            border: none;
+            background-color: $colorBbutton;
+            @include adaptiv-font(16, 14);
+            color: #FFFFFF;
+            padding: 16px 0;
+            border-radius: 5px;
+        }
+        a{
+            text-align: center;
+            @include adaptiv-font(16, 14);  
+            padding: 12px 0 0 0; 
+        }
+       
+    }
+    .singin.activ{
+        display: flex;
+    }
+    .register.activ{
+        display: flex;
+    }
+ }
+   
+}
+.account.activ{
+    padding: 111px 0 0 0;
+}
+.blog{
+    position: relative;
+    
+}
+.blog_sublist{
+    position: absolute;
+    top: 113px;
+    left: 980px;
+    list-style: none;
+    background: #FFFFFF;
+    @include adaptiv-font(14, 12);
+    color: #707070;
+    padding: 24px 24px 24px 18px;
+    border: 1px solid #D8D8D8;
+    z-index: 14;
+    li{
+        margin: 8px 0 0 0;
+        cursor: pointer;
+    }
+    .blog_sub_sublist{
+        position: relative;
+        
+        display: none;
+        list-style: none;
+        padding: 0;
+        color: $colorname;
+    }
+    .standard_sublist.activ{
+        display: block;
+    }
+    .post_sublist.activ{
+        display: block;
+    }
+}
 .accordion-item--active .accordion-item__content{
 display: block;
 }
@@ -652,6 +839,7 @@ border:1px solid #D8D8D8;
     visibility: visible;
     opacity: 1;
     animation: moveFromLeft 400ms ease;
+    z-index: 14;
 }
 .show{
     display: none   ;
