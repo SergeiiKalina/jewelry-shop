@@ -115,19 +115,20 @@ searchButton.addEventListener('click', () => {
 })
 
 blog.addEventListener('click', () => {
-
+const blogSubList = document.querySelector('.blog_sublist');
+blogSubList.classList.toggle('activ')
 })
 const sublistBtn = document.querySelectorAll('.subblist_button');
 sublistBtn.forEach(item => {
     item.addEventListener('click', (e) => {
         let target = e.target;
         if(target.closest('.blog_standard')){
-            console.log('asfas')
-            document.querySelector('.standard_sublist').classList.toggle('activ');
+            document.querySelector('.post_sublist').classList.remove('activ');
+            document.querySelector('.standard_sublist').classList.add('activ');
         }
         if(target.closest('.blog_post')){
-            console.log('asfas')
-            document.querySelector('.post_sublist').classList.toggle('activ');
+            document.querySelector('.standard_sublist').classList.remove('activ');
+            document.querySelector('.post_sublist').classList.add('activ');
         }
     })
 })

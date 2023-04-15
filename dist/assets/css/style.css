@@ -634,6 +634,7 @@ body.lock {
 }
 
 .blog_sublist {
+    width: 158px;
     position: absolute;
     top: 113px;
     left: 980px;
@@ -643,6 +644,7 @@ body.lock {
     padding: 24px 24px 24px 18px;
     border: 1px solid #D8D8D8;
     z-index: 14;
+    display: none;
 }
 
 @media (max-width: 767px) {
@@ -671,10 +673,26 @@ body.lock {
 }
 
 .blog_sublist .standard_sublist.activ {
+    position: absolute;
+    top: 60px;
+    left: 200px;
+    width: 200px;
+    background: #FFFFFF;
     display: block;
+    border: 1px solid #D8D8D8;
 }
 
 .blog_sublist .post_sublist.activ {
+    position: absolute;
+    top: 95px;
+    left: 200px;
+    width: 200px;
+    background: #FFFFFF;
+    display: block;
+    border: 1px solid #D8D8D8;
+}
+
+.blog_sublist.activ {
     display: block;
 }
 

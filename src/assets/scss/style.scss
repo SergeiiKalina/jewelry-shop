@@ -360,6 +360,7 @@ color: #000000;
     
 }
 .blog_sublist{
+    width: 158px;
     position: absolute;
     top: 113px;
     left: 980px;
@@ -370,6 +371,7 @@ color: #000000;
     padding: 24px 24px 24px 18px;
     border: 1px solid #D8D8D8;
     z-index: 14;
+  display: none;
     li{
         margin: 8px 0 0 0;
         cursor: pointer;
@@ -383,11 +385,24 @@ color: #000000;
         color: $colorname;
     }
     .standard_sublist.activ{
+        position: absolute;
+        top: 60px; left:200px;
+        width: 200px;
+        background: #FFFFFF;
         display: block;
+        border: 1px solid #D8D8D8;
     }
     .post_sublist.activ{
+        position: absolute;
+        top: 95px; left:200px;
+        width: 200px;
+        background: #FFFFFF;
         display: block;
+        border: 1px solid #D8D8D8;
     }
+}
+.blog_sublist.activ{
+    display: block;
 }
 .accordion-item--active .accordion-item__content{
 display: block;

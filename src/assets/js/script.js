@@ -302,7 +302,6 @@ document.querySelector('.block__cards').addEventListener('click', (e) => {
 let searchValue = '';
 const search = document.querySelector('.search_block a');
 const searchInput = document.querySelector('.search_block input');
-console.log(searchInput)
 searchInput.oninput = function(e){
 searchValue = e.target.value;
 }
