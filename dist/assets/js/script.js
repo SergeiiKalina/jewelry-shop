@@ -426,5 +426,27 @@ const upStorege = () => {
     localStorage.setItem('item', html)
     }
 };
+
+
+ ///////Blog /////
+
+blog.addEventListener('click', () => {
+const blogSubList = document.querySelector('.blog_sublist');
+blogSubList.classList.toggle('activ')
+})
+const sublistBtn = document.querySelectorAll('.subblist_button');
+sublistBtn.forEach(item => {
+    item.addEventListener('click', (e) => {
+        let target = e.target;
+        if(target.closest('.blog_standard')){
+            document.querySelector('.post_sublist').classList.remove('activ');
+            document.querySelector('.standard_sublist').classList.add('activ');
+        }
+        if(target.closest('.blog_post')){
+            document.querySelector('.standard_sublist').classList.remove('activ');
+            document.querySelector('.post_sublist').classList.add('activ');
+        }
+    })
+})
     
 document.querySelector('.fuck_basket').addEventListener('click', init())
