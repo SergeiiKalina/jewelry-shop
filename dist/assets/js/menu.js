@@ -72,11 +72,6 @@ burger.addEventListener('click', () => {
 
  ///////Blog /////
 
- const searchButton = document.querySelector('.search__img');
-searchButton.addEventListener('click', () => {
-    document.querySelector('.search_block').classList.toggle('activ')
-})
-
 blog.addEventListener('click', () => {
 const blogSubList = document.querySelector('.blog_sublist');
 blogSubList.classList.toggle('activ')
