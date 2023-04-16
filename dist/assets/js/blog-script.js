@@ -22,7 +22,7 @@ let pageNum;
 
 paginationNext.addEventListener('click', (e) => {
     e.preventDefault();
-    if(pageNum == blogPostDate.length / notesOnPage) return;
+    if(pageNum == countItems) return;
    pageNum = Number(pageNum) + Number(1);
     let start = (pageNum - 1) * notesOnPage;
     let end = start + notesOnPage;
