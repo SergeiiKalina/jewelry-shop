@@ -22,6 +22,8 @@ padding: 0 6%;
 $colorname: #000000;
 $colortext: #707070;
 $colorBbutton: #000000;
+$colorPrice: #A18A68;
+$colorReadMore: #A18A68;
 
 $maxWidth: 1440;
 @mixin adaptiv-font($pcSize, $mobSize){
@@ -403,6 +405,107 @@ color: #000000;
 }
 .blog_sublist.activ{
     display: block;
+}
+.blog_body{
+    display: flex;
+
+}
+.blog_items{
+    padding: 178px 0 0 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.blog_item{
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    padding: 0 0 64px 0;
+    .blog_item_date{
+        padding: 22px 0 0 0;
+        @include adaptiv-font(14, 12);
+color: $colortext;
+    }
+    .blog_item_name{
+        padding: 5px 0 0 0;
+        @include adaptiv-font(20, 16);
+color: $colorname;
+    }
+    .blog_item_text{
+        padding: 14px 0 0 0;
+        @include adaptiv-font(16, 14);
+color: #707070;
+    }
+    .blog_item_readmore{
+        padding: 24px 0 0 0;
+        @include adaptiv-font(16, 14);
+color: $colorReadMore;
+    }
+}
+.sidebar{
+    width: 100%;
+    padding: 80px 0 0 0;
+    nav{
+        width: 100%;
+    }
+    div{
+        padding: 28px 0 62px 0;
+    }
+    ul{
+        list-style: none;
+        padding: 0;
+        li{
+            cursor: pointer;
+            @include adaptiv-font(16, 12);
+color: #707070;
+        }
+        li:not(:first-child){
+            padding: 22px 0 0 0;
+        }
+        li:first-child{
+            font-weight: 500;
+            @include adaptiv-font(20, 16);
+            text-transform: capitalize;
+            color: #000000;
+        }
+    }
+    input{
+        width: 100%;
+    }
+    
+}
+.pagination{
+    ul{
+        display: flex;
+        list-style: none;
+        justify-content: center;
+        li{
+            @include adaptiv-font(14, 12);
+            border: 1px solid #D8D8D8;
+border-radius: 4px;
+padding: 16px;
+margin: 0 0 0 8px;
+cursor: pointer;
+        }
+        li:hover{
+            background:#000000;
+            color:#FFFFFF;
+        }
+        a{
+            cursor: pointer;
+            text-decoration: none;
+            @include adaptiv-font(14, 12);
+            border: 1px solid #D8D8D8;
+border-radius: 4px;
+padding: 16px;
+margin: 0 0 0 8px;
+        }
+        a:hover{
+            background:#000000;
+            color:#FFFFFF; 
+        }
+    }
 }
 .accordion-item--active .accordion-item__content{
 display: block;

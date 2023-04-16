@@ -112,3 +112,118 @@ const cardsData = [
         cost: '$ 29,00'
     },
 ]
+
+const blogPostDate = [
+    {
+        pictures: 'assets/images/body/blog/img 01.png',
+        date: 'Fashion - October 8, 2020',
+        title: 'Top Trends From Spring',
+    txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero <span>... page 1</span>',
+
+    },
+    {
+        pictures: 'assets/images/body/blog/img 02.png',
+        date: 'Fashion - October 8, 2020',
+        title: 'Top Trends From Spring',
+    txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero <span>... page 1</span>',
+
+    },
+    {
+        pictures: 'assets/images/body/blog/img 03.png',
+        date: 'Fashion - October 8, 2020',
+        title: 'Top Trends From Spring',
+    txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero <span>... page 1</span>',
+
+    },
+    {
+        pictures: 'assets/images/body/blog/img 04.png',
+        date: 'Fashion - October 8, 2020',
+        title: 'Top Trends From Spring',
+    txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero <span>... page 1</span>',
+
+    },
+    {
+        pictures: 'assets/images/body/blog/img 01.png',
+        date: 'Fashion - October 8, 2020',
+        title: 'Top Trends From Spring',
+    txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero <span>...page 2</span>',
+
+    },
+    {
+        pictures: 'assets/images/body/blog/img 02.png',
+        date: 'Fashion - October 8, 2020',
+        title: 'Top Trends From Spring',
+    txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero <span>... page 2</span>',
+
+    },
+    {
+        pictures: 'assets/images/body/blog/img 03.png',
+        date: 'Fashion - October 8, 2020',
+        title: 'Top Trends From Spring',
+    txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero <span>... page 2</span>',
+
+    },
+    {
+        pictures: 'assets/images/body/blog/img 04.png',
+        date: 'Fashion - October 8, 2020',
+        title: 'Top Trends From Spring',
+    txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero <span>... page 2</span>',
+
+    },
+    {
+        pictures: 'assets/images/body/blog/img 01.png',
+        date: 'Fashion - October 8, 2020',
+        title: 'Top Trends From Spring',
+    txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero <span>... page 3</span>',
+
+    },
+    {
+        pictures: 'assets/images/body/blog/img 02.png',
+        date: 'Fashion - October 8, 2020',
+        title: 'Top Trends From Spring',
+    txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero <span>... page 3</span>',
+
+    },
+    {
+        pictures: 'assets/images/body/blog/img 03.png',
+        date: 'Fashion - October 8, 2020',
+        title: 'Top Trends From Spring',
+    txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero <span>...page 3</span>',
+
+    },
+    {
+        pictures: 'assets/images/body/blog/img 04.png',
+        date: 'Fashion - October 8, 2020',
+        title: 'Top Trends From Spring',
+    txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero <span>... page 3</span>',
+
+    },
+    {
+        pictures: 'assets/images/body/blog/img 01.png',
+        date: 'Fashion - October 8, 2020',
+        title: 'Top Trends From Spring',
+    txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero <span>... page 4</span>',
+
+    },
+    {
+        pictures: 'assets/images/body/blog/img 02.png',
+        date: 'Fashion - October 8, 2020',
+        title: 'Top Trends From Spring',
+    txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero <span>... page 4</span>',
+
+    },
+    {
+        pictures: 'assets/images/body/blog/img 03.png',
+        date: 'Fashion - October 8, 2020',
+        title: 'Top Trends From Spring',
+    txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero <span>... page 4</span>',
+
+    },
+    {
+        pictures: 'assets/images/body/blog/img 04.png',
+        date: 'Fashion - October 8, 2020',
+        title: 'Top Trends From Spring',
+    txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.  faucibus augue, a maximus elit ex vitae libero <span>... page 4</span>',
+
+    },
+]

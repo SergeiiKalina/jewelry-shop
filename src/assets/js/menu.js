@@ -1,4 +1,3 @@
-
 const menu = document.getElementById('menu')
 const burger = document.querySelector('.menu__icon')
 const listItem = document.querySelectorAll('.target')
