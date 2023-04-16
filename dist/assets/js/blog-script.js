@@ -3,8 +3,8 @@
 const paginationList = document.querySelector('.pagination ul');
 const blogContent = document.querySelector('.blog_items');
 let notesOnPage = 4;
-
-for(let index = 1; index <= blogPostDate.length / notesOnPage; index++){
+let countItems = Math.ceil(blogPostDate.length / notesOnPage);
+for(let index = 1; index <= countItems; index++){
    let li = `<li>${index}</li>`;
     paginationList.insertAdjacentHTML('beforeend', li) 
 }
@@ -17,6 +17,9 @@ paginationList.insertAdjacentHTML('beforeend', `<a href="#">›</a>`)
 const paginationBtnOne = document.querySelector('.pagination li');
 const paginationNext = document.querySelector('.pagination a');
 let pageNum;
+
+
+
 paginationNext.addEventListener('click', (e) => {
     e.preventDefault();
     if(pageNum == blogPostDate.length / notesOnPage) return;
