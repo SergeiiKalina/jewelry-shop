@@ -664,6 +664,22 @@ body.lock {
     cursor: pointer;
 }
 
+.blog_sublist li a {
+    color: #707070;
+}
+
+@media (max-width: 767px) {
+    .blog_sublist li a {
+        font-size: calc(12px + 3.4 * ((100vw - 320px) / 1440));
+    }
+}
+
+@media (min-width: 767px) {
+    .blog_sublist li a {
+        font-size: calc(12px + 2 * (100vw / 1440));
+    }
+}
+
 .blog_sublist .blog_sub_sublist {
     position: relative;
     display: none;
@@ -788,6 +804,10 @@ body.lock {
     }
 }
 
+.one .blog_item {
+    width: 100%;
+}
+
 .sidebar {
     width: 35%;
     padding: 80px 0 0 0;
@@ -849,6 +869,71 @@ body.lock {
     width: 100%;
 }
 
+.sidebar_right {
+    width: 35%;
+    padding: 80px 0 0 39px;
+}
+
+.sidebar_right nav {
+    width: 100%;
+}
+
+.sidebar_right div {
+    padding: 28px 0 62px 0;
+}
+
+.sidebar_right ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar_right ul li {
+    cursor: pointer;
+    color: #707070;
+}
+
+@media (max-width: 767px) {
+    .sidebar_right ul li {
+        font-size: calc(12px + 6.8 * ((100vw - 320px) / 1440));
+    }
+}
+
+@media (min-width: 767px) {
+    .sidebar_right ul li {
+        font-size: calc(12px + 4 * (100vw / 1440));
+    }
+}
+
+.sidebar_right ul li:not(:first-child) {
+    padding: 22px 0 0 0;
+}
+
+.sidebar_right ul li:first-child {
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+@media (max-width: 767px) {
+    .sidebar_right ul li:first-child {
+        font-size: calc(16px + 6.8 * ((100vw - 320px) / 1440));
+    }
+}
+
+@media (min-width: 767px) {
+    .sidebar_right ul li:first-child {
+        font-size: calc(16px + 4 * (100vw / 1440));
+    }
+}
+
+.sidebar_right input {
+    width: 100%;
+}
+
+.sidebar_none {
+    display: none;
+}
+
 .pagination ul {
     display: flex;
     list-style: none;
@@ -876,6 +961,10 @@ body.lock {
 }
 
 .pagination ul li:hover {
+    border: 1px solid red;
+}
+
+.pagination ul li.activ {
     background: #000000;
     color: #FFFFFF;
 }
@@ -902,8 +991,7 @@ body.lock {
 }
 
 .pagination ul a:hover {
-    background: #000000;
-    color: #FFFFFF;
+    border: 1px solid red;
 }
 
 .accordion-item--active .accordion-item__content {

@@ -1,8 +1,17 @@
 
+
 ////// Pagination ///////
 const paginationList = document.querySelector('.pagination ul');
 const blogContent = document.querySelector('.blog_items');
-let notesOnPage = 4;
+const bigItemsBlog = document.querySelector('.one')
+let notesOnPage;
+console.log(bigItemsBlog)
+if(bigItemsBlog){
+    notesOnPage = 2;
+}else{
+    notesOnPage = 4;
+}
+
 let countItems = Math.ceil(blogPostDate.length / notesOnPage);
 for(let index = 1; index <= countItems; index++){
    let li = `<li>${index}</li>`;
@@ -19,10 +28,11 @@ const paginationNext = document.querySelector('.pagination a');
 let pageNum;
 
 
-
 paginationNext.addEventListener('click', (e) => {
     e.preventDefault();
     if(pageNum == countItems) return;
+    paginationBtn.forEach(item => item.classList.remove('activ'))
+    paginationBtn[pageNum].classList.add('activ');
    pageNum = Number(pageNum) + Number(1);
     let start = (pageNum - 1) * notesOnPage;
     let end = start + notesOnPage;
@@ -36,6 +46,8 @@ blogContent.insertAdjacentHTML('afterbegin', GeneratBlogCard(item.pictures, item
 
 for(let item of paginationBtn){
     item.addEventListener('click', () => {
+        paginationBtn.forEach(item => item.classList.remove('activ'))
+        item.classList.add('activ')
         pageNum = item.innerHTML;
         let start = (pageNum - 1) * notesOnPage;
         let end = start + notesOnPage;
