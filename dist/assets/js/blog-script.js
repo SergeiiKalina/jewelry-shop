@@ -86,9 +86,3 @@ GeneratcontentPage(img)
 function GeneratcontentPage(img){
     return ` `
 }
-
-function fetchint(){
-    let v = fetch('assets/js/data.js');
-    console.log(v)
-}
-fetchint()
