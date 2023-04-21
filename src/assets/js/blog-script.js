@@ -5,7 +5,6 @@ const paginationList = document.querySelector('.pagination ul');
 const blogContent = document.querySelector('.blog_items');
 const bigItemsBlog = document.querySelector('.one')
 let notesOnPage;
-console.log(bigItemsBlog)
 if(bigItemsBlog){
     notesOnPage = 2;
 }else{
@@ -66,9 +65,25 @@ return `<div class="blog_item">
 <div class="blog_item_date">${date}</div>
 <div class="blog_item_name">${title}</div>
 <div class="blog_item_text">${txt}</div>
-<div class="blog_item_readmore">Read More</div>
+<div class="blog_item_readmore"><a href="blog_item.html">Read More</a></div>
 </div>`
 }
 paginationBtnOne.click();
 
 //////////////////////////////////////////////////////////////////////
+
+/////// Genarate page blog item////
+
+const blogContentBlock = document.querySelector('.blog_content')
+blogContentBlock.addEventListener('click', (event) => {
+    let target = event.target;
+    if(!target.closest('.blog_item_readmore')) return;
+   let item = target.parentElement;
+let img = item.querySelector('img').src;
+GeneratcontentPage(img)
+})
+
+function GeneratcontentPage(img){
+    return ` `
+}
+

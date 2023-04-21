@@ -131,7 +131,10 @@ localStorage.setItem('blog', parent)
 
 const initialBlog = () => {
     if(localStorage.getItem('blog') !== null){
-        document.querySelector('.blog_body').innerHTML = localStorage.getItem('blog');
+        if(document.querySelector('.blog_body')){
+            document.querySelector('.blog_body').innerHTML = localStorage.getItem('blog');
+        }
+        
     }
     }
     initialBlog()

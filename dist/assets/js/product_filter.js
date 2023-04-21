@@ -264,3 +264,183 @@ function ready(){
         }
     }
 }
+
+blog.addEventListener('click', () => {
+    const blogSubList = document.querySelector('.blog_sublist');
+    blogSubList.classList.toggle('activ')
+    })
+    const sublistBtn = document.querySelectorAll('.subblist_button');
+    sublistBtn.forEach(item => {
+        item.addEventListener('click', (e) => {
+            let target = e.target;
+            if(target.closest('.blog_standard')){
+                document.querySelector('.post_sublist').classList.remove('activ');
+                document.querySelector('.standard_sublist').classList.add('activ');
+            }
+            if(target.closest('.blog_post')){
+                document.querySelector('.standard_sublist').classList.remove('activ');
+                document.querySelector('.post_sublist').classList.add('activ');
+            }
+        })
+    })
+    
+    ////Generator content blog/////////
+    
+    rightSideBar.addEventListener('click', () => {
+        localStorage.removeItem('blog')
+        let parent = generatorContentBlogRight();
+        parent = parent.trim();
+        if(parent.length){
+    localStorage.setItem('blog', parent)
+        }
+    })
+    
+    leftSideBar.addEventListener('click', () => {
+        localStorage.removeItem('blog')
+        let parent = generatorContentBlogLeft();
+        parent = parent.trim();
+        if(parent.length){
+    localStorage.setItem('blog', parent)
+        }
+    })
+    
+    
+    blogMasonry.addEventListener('click', () => {
+        localStorage.removeItem('blog')
+        let parent = generatorContentBlogMasonry();
+        parent = parent.trim();
+        if(parent.length){
+    localStorage.setItem('blog', parent)
+        }
+    })
+    
+    withoutSidebar.addEventListener('click', () => {
+        localStorage.removeItem('blog')
+        let parent = generatorContentBlogwithoutSidebar();
+        parent = parent.trim();
+        if(parent.length){
+    localStorage.setItem('blog', parent)
+        }
+    })
+    
+    const initialBlog = () => {
+        if(localStorage.getItem('blog') !== null){
+            document.querySelector('.blog_body').innerHTML = localStorage.getItem('blog');
+        }
+        }
+        initialBlog()
+    
+    function generatorContentBlogwithoutSidebar(){
+        return `
+            <div class="sidebar">
+            <h3>Blog</h3>
+            <nav class="sidebar_none">
+            <div class="filter__head_search"><input type="search" placeholder="Search..."><a href="#" class="search_Button"></a></div>
+            <ul>
+                <li>Categories</li>
+                <li>Fashion</li>
+                <li>Style</li>
+                <li>Accessories</li>
+                <li>Season</li>
+            </ul></nav>
+        </div>
+            <div class="blog_content">
+            <div class="blog_items one">
+                
+            </div>
+            <div class="pagination">
+                <ul>
+                    
+                    
+                </ul>
+            </div>
+            </div>
+         
+            `
+    }
+    
+        function generatorContentBlogMasonry(){
+            return `
+            <div class="sidebar">
+            <h3>Blog</h3>
+            <nav>
+            <div class="filter__head_search"><input type="search" placeholder="Search..."><a href="#" class="search_Button"></a></div>
+            <ul>
+                <li>Categories</li>
+                <li>Fashion</li>
+                <li>Style</li>
+                <li>Accessories</li>
+                <li>Season</li>
+            </ul></nav>
+        </div>
+            <div class="blog_content">
+            <div class="blog_items">
+                
+            </div>
+            <div class="pagination">
+                <ul>
+                    
+                    
+                </ul>
+            </div>
+            </div>
+         
+            `
+        }
+    
+        function generatorContentBlogLeft(){
+            return `
+            <div class="sidebar">
+            <h3>Blog</h3>
+            <nav>
+            <div class="filter__head_search"><input type="search" placeholder="Search..."><a href="#" class="search_Button"></a></div>
+            <ul>
+                <li>Categories</li>
+                <li>Fashion</li>
+                <li>Style</li>
+                <li>Accessories</li>
+                <li>Season</li>
+            </ul></nav>
+        </div>
+            <div class="blog_content">
+            <div class="blog_items one">
+                
+            </div>
+            <div class="pagination">
+                <ul>
+                    
+                    
+                </ul>
+            </div>
+            </div>
+         
+            `
+        }
+    
+    function generatorContentBlogRight(){
+        return `
+        <div class="blog_content">
+        <div class="blog_items one">
+            
+        </div>
+        <div class="pagination">
+            <ul>
+                
+                
+            </ul>
+        </div>
+        </div>
+        <div class="sidebar_right">
+            <h3>Blog</h3>
+            <nav>
+            <div class="filter__head_search"><input type="search" placeholder="Search..."><a href="#" class="search_Button"></a></div>
+            <ul>
+                <li>Categories</li>
+                <li>Fashion</li>
+                <li>Style</li>
+                <li>Accessories</li>
+                <li>Season</li>
+            </ul></nav>
+        </div>
+        `
+    }
