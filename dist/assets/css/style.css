@@ -789,7 +789,6 @@ body.lock {
 
 .blog_item .blog_item_readmore {
     padding: 24px 0 0 0;
-    color: #A18A68;
     cursor: pointer;
 }
 
@@ -803,6 +802,11 @@ body.lock {
     .blog_item .blog_item_readmore {
         font-size: calc(14px + 2 * (100vw / 1440));
     }
+}
+
+.blog_item .blog_item_readmore a {
+    text-decoration: none;
+    color: #A18A68;
 }
 
 .one .blog_item {
@@ -1196,8 +1200,12 @@ body.lock {
 }
 
 .post_comments {
-    width: 41.1vw;
+    max-width: 41.1vw;
     margin: 0 auto;
+}
+
+.post_comments .post_form_comments {
+    width: 100%;
 }
 
 .post_comments .post_form_comments_header {
@@ -1344,11 +1352,17 @@ body.lock {
     }
 }
 
+.post_subcomment_block {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
 .post_block_comments {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin: 68px 0 0 0;
+    margin: 68px 0 253px 0;
 }
 
 @media (max-width: 767px) {
@@ -1371,15 +1385,76 @@ body.lock {
 }
 
 .post_block_comments .post_supcomment {
+    width: 100%;
     display: flex;
 }
 
-.post_block_comments .post_comments_comment_txt_title {
+.post_block_comments .reply_block {
+    display: block;
+    width: 100%;
+    padding: 8px 0 0 24px;
+}
+
+.post_block_comments .reply_block .reply_block_form {
+    display: flex;
+}
+
+.post_block_comments .reply_block img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.post_block_comments .reply_block input {
+    width: 95%;
+    border: none;
+    border-bottom: 1px solid #707070;
+    margin: 0 0 0 10px;
+    outline: none;
+}
+
+.post_block_comments .reply_block .reply_block_button {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 5px 0 0;
+}
+
+.post_block_comments .reply_block .reply_block_button button {
+    border: none;
+    background: #000000;
+    color: #FFFFFF;
+    padding: 5px 15px;
+    border-radius: 16px;
+}
+
+.post_block_comments .reply_block.activ {
+    display: block;
+}
+
+.post_block_comments .post_comments_comment_txt {
+    width: 100%;
+}
+
+.post_block_comments .post_comments_comment_txt_block {
+    width: 100%;
+}
+
+.post_block_comments .post_comments_comment_txt_block .post_comments_comment_txt_title {
+    width: 100%;
+    display: flex;
+}
+
+.post_block_comments .post_block_comments_comment_subcomment .post_comments_comment_txt_title {
     display: flex;
     justify-content: space-between;
 }
 
+.post_block_comments .post_block_comments_comment_subcomment .post_comments_comment_txt_title_date {
+    padding: 8px 0 0 24px;
+}
+
 .post_block_comments .post_comments_comment_txt_title_user {
+    width: 240px;
     display: flex;
 }
 
@@ -1389,13 +1464,13 @@ body.lock {
 
 @media (max-width: 767px) {
     .post_block_comments .post_comments_comment_txt_title_name {
-        font-size: calc(16px + 6.8 * ((100vw - 320px) / 1440));
+        font-size: calc(12px + 13.6 * ((100vw - 320px) / 1440));
     }
 }
 
 @media (min-width: 767px) {
     .post_block_comments .post_comments_comment_txt_title_name {
-        font-size: calc(16px + 4 * (100vw / 1440));
+        font-size: calc(12px + 8 * (100vw / 1440));
     }
 }
 
@@ -1420,6 +1495,7 @@ body.lock {
 
 .post_block_comments .post_comments_comment_txt_reply_button {
     position: relative;
+    display: flex;
 }
 
 .post_block_comments .post_comments_comment_txt_reply_button button {
@@ -1443,14 +1519,14 @@ body.lock {
 .post_block_comments .post_comments_comment_txt_reply_button::before {
     content: url(../images/body/blog/icon/reply.png);
     position: absolute;
-    top: 2px;
+    top: 0;
     left: -17px;
 }
 
 .post_block_comments .post_supcomment_subcomment .post_comments_comment_txt_reply_button::before {
     content: url(../images/body/blog/icon/reply.png);
     position: absolute;
-    top: 2px;
+    top: 0;
     left: -12px;
 }
 
@@ -1474,8 +1550,7 @@ body.lock {
 .post_block_comments .post_block_comments_comment_subcomment {
     width: 100%;
     padding: 48px 0 0 0;
-    display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .post_block_comments .post_supcomment_subcomment {
@@ -1975,6 +2050,7 @@ main img {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    border-top: 1px solid #D8D8D8;
 }
 
 .footer__block {
@@ -4381,17 +4457,36 @@ main img {
 }
 
 @media (max-width: 767px) {
+    .post_comments {
+        max-width: 74.8vw;
+        margin: 0 auto;
+    }
+
+    .post_block_comments .post_comments_comment_txt_title_user {
+        width: 100%;
+        display: flex;
+    }
+
+    .post_block_comments .post_comments_comment_txt_reply_button::before {
+        content: url(../images/body/blog/icon/reply.png);
+        position: absolute;
+        top: -2px;
+        left: -17px;
+    }
+
+    .post_block_comments .post_supcomment_subcomment .post_comments_comment_txt_reply_button::before {
+        content: url(../images/body/blog/icon/reply.png);
+        position: absolute;
+        top: -2px;
+        left: -12px;
+    }
+
     .post_comments form .post_form_button {
         width: 35%;
     }
 
     .post_block_comments .post_comments_comment_txt_title_date {
-        padding: 0 0 0 24px;
-    }
-
-    .post_subcomment_block {
-        display: flex;
-        justify-content: space-between;
+        padding: 8px 0 0 24px;
     }
 
     .post_comments_comment_txt_title_user {
@@ -4403,12 +4498,8 @@ main img {
     }
 
     .post_comments_comment_txt_block {
+        display: flex;
         flex-wrap: wrap;
-    }
-
-    .post_comments {
-        width: 74.8vw;
-        margin: 0 auto;
     }
 
     .post_body {
@@ -5820,6 +5911,13 @@ main img {
 }
 
 @media (max-width: 550px) {
+    .post_subcomment_block {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
     .post_tags_tag_social {
         padding: 35px 0 0 0;
     }
@@ -5830,7 +5928,6 @@ main img {
 
     .post_block_comments .post_comments_comment_txt_title {
         display: flex;
-        flex-direction: column;
     }
 
     .post_block_comments_comment_subcomment .post_comments_comment_txt_title {

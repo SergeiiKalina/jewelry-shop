@@ -171,9 +171,3 @@ const blogPostDate = [
 
     },
 ]
-
-const ftch = [
-    {
-        bottle: 'ROM'
-    }
-]

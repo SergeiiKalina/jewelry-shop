@@ -521,8 +521,10 @@ blog.addEventListener('click', () => {
   
   const initialBlog = () => {
       if(localStorage.getItem('blog') !== null){
+        if(document.querySelector('.blog_body')){
           document.querySelector('.blog_body').innerHTML = localStorage.getItem('blog');
       }
+    }
       }
       initialBlog()
   

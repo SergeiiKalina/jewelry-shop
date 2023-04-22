@@ -47,14 +47,14 @@ title: Shelly Theme
             <div class="post_form_comments">
                 <div class="post_form_comments_header"><h3>Leave a reply</h3></div>
                 <div class="post_form_comments_header_txt">Your email address will not be published. Required fields are marked *</div>
-                <form action="">
+                <form action="" class="blog_commens_form">
                     <div><input type="text" class="form_comments_name" placeholder="Enter your name*"></div>
                     <div><input type="email" class="form_comments_email" placeholder="Enter your Email*"></div>
                     <div><input type="text" class="form_comments_website" placeholder="Enter your Website"></div>
                     <div class="form_label_block"><input type="checkbox" class="form_comments_checkbox" id="checkboxComment"><label for="checkboxComment"> Save my name, email, and website in this browser for the next time I comment</label></div>
                     <div class="post_block_comments_title">Your Comment*</div>
                     <div><input type="text" class="form_comments_comment"></div> 
-                    <div class="post_form_button"><a href="">POST COMMENT</a></div>
+                    <div class="post_form_button"><a href="" id="blogCommentsButton">POST COMMENT</a></div>
                 </form>
             <div class="post_block_comments">
                 <div class="post_block_comments_quantity">Comments(<span>3</span>)</div>
@@ -69,12 +69,15 @@ title: Shelly Theme
                         </div>
                         <div class="post_subcomment_block">
                         <div class="post_comments_comment_txt_title_date">6 May, 2020</div>
-                            <div class="post_comments_comment_txt_reply_button"><button>Reply</button></div></div>
+                            <div class="post_comments_comment_txt_reply_button"><div><button>Reply</button></div></div></div>
                         </div>
                        
                     </div>
                     <div class="post_comments_comment_txt_content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. </div>
-                    </div></div>
+                    <div class="reply_block"><div class="reply_block_form"><img src="assets/images/body/blog/avatar/Img 03 (1).png" alt=""><input type="text" placeholder="sometext..."></div><div class="reply_block_button"><button>Send</button></div></div>
+                    </div>
+                
+                </div>
 
                     <div class="post_block_comments_comment_subcomment">
                         <div class="post_supcomment post_supcomment_subcomment">
@@ -85,9 +88,11 @@ title: Shelly Theme
                                 <div class="post_comments_comment_txt_title_user">
                             <div class="post_comments_comment_txt_title_name">Kate moss</div>
                         </div>
+                        <div class="post_subcomment_block">
                         <div class="post_comments_comment_txt_title_date">6 May, 2020</div>
-                            <div class="post_comments_comment_txt_reply_button"><button>Reply</button></div>
+                            <div class="post_comments_comment_txt_reply_button"><button>Reply</button></div></div>
                         </div>
+                       
                     </div>
                     <div class="post_comments_subcomment_txt_content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. </div>
                     </div></div>
@@ -128,6 +133,7 @@ title: Shelly Theme
 </div>
     </div>
 </div>
+<script src="assets/js/blog-items-script.js"></script>
 <script src="assets/js/data.min.js"></script>
 <script src="assets/js/menu.js"></script>
 <script src="assets/js/account-script.js"></script>

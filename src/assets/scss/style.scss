@@ -448,9 +448,14 @@ color: #707070;
     .blog_item_readmore{
         padding: 24px 0 0 0;
         @include adaptiv-font(16, 14);
-color: $colorReadMore;
+
 cursor: pointer;
+a {
+    text-decoration: none;
+    color: $colorReadMore;
+}
     }
+
 }
 .one{
     .blog_item{
@@ -688,11 +693,12 @@ padding: 48px 0 0 0;
     
 }
 .post_comments {
-    width: 41.1vw;
+    max-width: 41.1vw;
     margin: 0 auto;
     
+    
     .post_form_comments {
-
+width: 100%;
     }
     .post_form_comments_header {
         @include adaptiv-font(26, 20);
@@ -766,11 +772,18 @@ margin: 0;
    
 }
 
+.post_subcomment_block{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+        }
+
+
 .post_block_comments {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin: 68px 0 0 0;
+    margin: 68px 0 253px 0;
     .post_block_comments_quantity {
         @include adaptiv-font(26, 20); 
     }
@@ -782,26 +795,75 @@ margin: 0;
     }
    
     .post_supcomment{
+        width: 100%;
         display: flex;
+    }
+    .reply_block{
+        display: block;
+        width: 100%;
+        padding: 8px 0 0 24px;
+        // display: none;
+        .reply_block_form{
+display: flex;
+        }
+        img{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        input{
+            width: 95%;
+            border: none;
+            border-bottom: 1px solid #707070;
+            margin: 0 0 0 10px;
+            outline: none;
+        }
+        .reply_block_button{
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px 5px 0 0;
+button{
+    border: none;
+    background: #000000;
+    color: #FFFFFF;
+    padding: 5px 15px;
+    border-radius: 16px;
+}
+        }
+    }
+    .reply_block.activ{
+        display: block;
     }
     .post_comments_comment_img {
     }
     .post_comments_comment_txt {
-       
+       width: 100%;
     }
     .post_comments_comment_txt_block {
-    
+    width: 100%;
+        .post_comments_comment_txt_title {
+            width: 100%;
+            display: flex;
+        }
+       
     }
-    .post_comments_comment_txt_title {
-
-        display: flex;
-        justify-content: space-between;
+    
+    .post_block_comments_comment_subcomment{
+        .post_comments_comment_txt_title {
+            display: flex;
+            justify-content: space-between;
+        }
+        .post_comments_comment_txt_title_date {
+            padding:  8px 0 0 24px;
+        }
     }
     .post_comments_comment_txt_title_user{
+    width: 240px;
         display: flex;
             }
     .post_comments_comment_txt_title_name {
-        @include adaptiv-font(20, 16); 
+
+        @include adaptiv-font(20, 12); 
         padding: 0 0 0 24px;
     }
     .post_comments_comment_txt_title_date {
@@ -813,6 +875,7 @@ margin: 0;
     }
     .post_comments_comment_txt_reply_button {
         position: relative;
+        display: flex;
         button{
             background: none;
             border: none;
@@ -823,13 +886,13 @@ margin: 0;
     .post_comments_comment_txt_reply_button::before{
         content: url(../images/body/blog/icon/reply.png);
         position: absolute;
-        top: 2px;
+        top: 0;
         left: -17px;
     }
     .post_supcomment_subcomment .post_comments_comment_txt_reply_button::before{
         content: url(../images/body/blog/icon/reply.png);
         position: absolute;
-        top: 2px;
+        top: 0;
         left: -12px;
     }
     .post_comments_comment_txt_content {
@@ -841,8 +904,10 @@ margin: 0;
         
         width: 100%;
         padding: 48px 0 0 0;
-        display: flex;
-        justify-content: end;
+       
+        justify-content: flex-end;
+        
+
     }
     .post_supcomment_subcomment{
         width: 85%;
@@ -1228,6 +1293,7 @@ left: 0;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    border-top: 1px solid #D8D8D8;
 }
 .footer__block{
     display: flex;
@@ -3213,6 +3279,29 @@ margin-left: -15px;
 }
 @media(max-width: 767px){
     .post_comments {
+        max-width: 74.8vw;
+        margin: 0 auto;
+    }    
+
+    .post_block_comments {
+        .post_comments_comment_txt_title_user{
+            width: 100%;
+                display: flex;
+                    }
+        .post_comments_comment_txt_reply_button::before{
+            content: url(../images/body/blog/icon/reply.png);
+            position: absolute;
+            top: -2px;
+            left: -17px;
+        }
+        .post_supcomment_subcomment .post_comments_comment_txt_reply_button::before{
+            content: url(../images/body/blog/icon/reply.png);
+            position: absolute;
+            top: -2px;
+            left: -12px;
+        }
+    }
+    .post_comments {
         form{
     .post_form_button{
         width: 35%;
@@ -3223,13 +3312,10 @@ margin-left: -15px;
     .post_block_comments {
     .post_comments_comment_txt_title_date {
     
-        padding:  0 0 0 24px;
+        padding:  8px 0 0 24px;
     }
 }
-    .post_subcomment_block{
-display: flex;
-justify-content: space-between;
-    }
+   
     .post_comments_comment_txt_title_user{
         flex-wrap: wrap;
     }
@@ -3237,11 +3323,8 @@ justify-content: space-between;
         flex-wrap: wrap;
     }
     .post_comments_comment_txt_block{
+        display: flex;
 flex-wrap: wrap;
-    }
-    .post_comments {
-        width: 74.8vw;
-        margin: 0 auto;
     }
     .post_body {
         width: 100%;
@@ -4172,6 +4255,12 @@ line-height: 26px;
 }
 
 @media(max-width: 550px){
+    .post_subcomment_block{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+            }
     .post_tags_tag_social{
         padding: 35px 0 0 0;
     }
@@ -4186,7 +4275,6 @@ line-height: 26px;
     .post_block_comments {
     .post_comments_comment_txt_title{
         display: flex;
-        flex-direction: column;
     }
 }
     .post_block_comments_comment_subcomment{
@@ -4199,7 +4287,9 @@ line-height: 26px;
             padding:  8px 0 0 24px;
         }
         .post_comments_comment_txt_reply_button {
+         
             position: relative;
+            
             button{
                 background: none;
                 border: none;
