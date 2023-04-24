@@ -70,10 +70,6 @@ return `<div class="blog_item">
 }
 paginationBtnOne.click();
 
-const formName = document.querySelector('.form_comments_name');
-formName.oninput = function (){
-    this.value = this.value.substr(0, 20)
-}
 
 //////////////////////////////////////////////////////////////////////
 

@@ -412,6 +412,8 @@ color: #000000;
     display: block;
 }
 .blog_body{
+    position: relative;
+    z-index: 13;
     display: flex;
 justify-content: space-between;
 }
@@ -802,7 +804,7 @@ margin: 0;
         display: block;
         width: 100%;
         padding: 8px 0 0 24px;
-        // display: none;
+        display: none;
         .reply_block_form{
 display: flex;
         }
@@ -896,27 +898,27 @@ button{
         left: -12px;
     }
     .post_comments_comment_txt_content {
-        @include adaptiv-font(16, 12    );
+        @include adaptiv-font(16, 12);
         color: $colortext; 
         padding: 16px 0 0 24px;
     }
     .post_block_comments_comment_subcomment {
-        
         width: 100%;
-        padding: 48px 0 0 0;
-       
-        justify-content: flex-end;
         
-
+        display: flex;
+        flex-direction: column;
+        
     }
     .post_supcomment_subcomment{
         width: 85%;
         display: flex;
-        
+        padding: 48px 0 0 0;
+        margin-left: auto;
     }
     .post_comments_subcomment_img {
     }
     .post_comments_subcomment_txt {
+        width: 100%;
     }
     .post_comments_subcomment_txt_block {
     }
@@ -4255,6 +4257,10 @@ line-height: 26px;
 }
 
 @media(max-width: 550px){
+    .blog_item{
+    
+        width: 100%;
+    }
     .post_subcomment_block{
         width: 100%;
         display: flex;
@@ -4440,6 +4446,14 @@ display: block;
     }
 }
 @media(max-width: 460px){
+    .blog_sublist{
+        .standard_sublist.activ{
+            top: 90px; left:102px;
+        }
+    .post_sublist.activ{
+        top: 130px; left:22px;
+    }
+    }  
     .post_comments {
         form{
     .post_form_button{

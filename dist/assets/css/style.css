@@ -713,6 +713,8 @@ body.lock {
 }
 
 .blog_body {
+    position: relative;
+    z-index: 13;
     display: flex;
     justify-content: space-between;
 }
@@ -1393,6 +1395,7 @@ body.lock {
     display: block;
     width: 100%;
     padding: 8px 0 0 24px;
+    display: none;
 }
 
 .post_block_comments .reply_block .reply_block_form {
@@ -1549,13 +1552,19 @@ body.lock {
 
 .post_block_comments .post_block_comments_comment_subcomment {
     width: 100%;
-    padding: 48px 0 0 0;
-    justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
 }
 
 .post_block_comments .post_supcomment_subcomment {
     width: 85%;
     display: flex;
+    padding: 48px 0 0 0;
+    margin-left: auto;
+}
+
+.post_block_comments .post_comments_subcomment_txt {
+    width: 100%;
 }
 
 .post_block_comments .post_comments_subcomment_txt_content {
@@ -5911,6 +5920,10 @@ main img {
 }
 
 @media (max-width: 550px) {
+    .blog_item {
+        width: 100%;
+    }
+
     .post_subcomment_block {
         width: 100%;
         display: flex;
@@ -6192,6 +6205,16 @@ main img {
 }
 
 @media (max-width: 460px) {
+    .blog_sublist .standard_sublist.activ {
+        top: 90px;
+        left: 102px;
+    }
+
+    .blog_sublist .post_sublist.activ {
+        top: 130px;
+        left: 22px;
+    }
+
     .post_comments form .post_form_button {
         width: 50%;
     }
