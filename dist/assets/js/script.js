@@ -113,6 +113,9 @@ new Swiper('.container-slider', {
         disableOnInteraction: false
     }
 });
+
+
+
 function cardGeneration(data){
     const card = [];
     for(let i = 0; i < data.length; i++){
@@ -179,6 +182,9 @@ const generateCardProduct = (img, title, price, id, atributPrice) => {
     `
     
 }
+
+
+
 const bagQuntity = document.querySelector('.bag_footer_itemquantity span');
 const bagHeadquntity = document.querySelector('.bag_quantity_item')
 const pricequantity = () => {
@@ -213,6 +219,7 @@ productBtn.forEach(el => {
     el.addEventListener('click', (e) => {
         e.preventDefault()
 let self = e.currentTarget;
+console.log(self)
 let parent = self.closest('.product_block_item');
 let id = parent.dataset.id;
 let img = parent.querySelector('.product__block_img img').getAttribute('src');

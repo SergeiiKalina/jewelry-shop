@@ -1,0 +1,40 @@
+const tabs = document.querySelectorAll('.myaccount_nav a');
+const contents = document.querySelectorAll('.nav_block_content section');
+tabs.forEach((item) => {
+    item.addEventListener('click', (event) => {
+        event.preventDefault();
+        contents.forEach((item) => item.classList.remove('item_content_activ'));
+        tabs.forEach((item) => item.classList.remove('activ'));
+        let target = event.target;
+        if (target.tagName !== 'A') return;
+        const id = event.target.getAttribute('href').replace('#', '');
+        document.getElementById(id).classList.add('item_content_activ');
+        console.log(document.getElementById(id));
+        item.classList.add('activ');
+    });
+});
+
+const initUserInfo = () => {
+    if (localStorage.getItem('user') !== null) {
+        if (document.querySelector('.cont4_data_block')) {
+            document.querySelector('.cont4_data_block').innerHTML =
+                localStorage.getItem('user');
+        }
+    }
+};
+initUserInfo();
+
+const form = document.querySelector('.billing_form');
+const formData = new FormData(form);
+const submitForm = document.querySelector('.cont4_form_submit');
+
+submitForm.addEventListener('click', (e) => {
+    e.preventDefault();
+    let a = {};
+    for (let [key, value] of formData) {
+        a.key = value;
+    }
+    console.log(a);
+});
+
+document.querySelectorAll('.myaccount_nav a')[4].click();
