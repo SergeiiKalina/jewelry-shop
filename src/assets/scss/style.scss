@@ -937,11 +937,16 @@ $maxWidth: 1440;
         }
     }
     .myaccount_nav {
-        width: 100%;
+        position: relative;
+        width: 94%;
+        overflow-x: scroll;
+        z-index: 12;
         ul {
+            width: 899px;
             display: flex;
             list-style: none;
             padding: 64px 0 34px 0;
+            margin-left: 25px;
             border-bottom: 1px solid #d8d8d8;
             li {
                 padding: 0 49px 0 0;
@@ -957,6 +962,9 @@ $maxWidth: 1440;
                 color: $colorname;
             }
         }
+    }
+    .myaccount_nav::-webkit-scrollbar {
+        display: none;
     }
     .nav_block_content {
         min-height: 200px;
@@ -1017,6 +1025,65 @@ $maxWidth: 1440;
     }
 }
 
+.nav_arrow_block {
+    display: none;
+    position: relative;
+    top: -70px;
+    .nav_arr-left {
+        position: absolute;
+        top: 2px;
+        left: -10px;
+        z-index: 13;
+        .nav_arr-left1 {
+            position: absolute;
+            top: -0.5px;
+            left: 1px;
+            width: 8px;
+            height: 1px;
+            background: #000000;
+            border-radius: 2px;
+            rotate: -43deg;
+        }
+        .nav_arr-left2 {
+            position: absolute;
+            top: 4px;
+            left: 1px;
+            width: 8px;
+            height: 1px;
+            background: #000000;
+            border-radius: 2px;
+            rotate: 45deg;
+        }
+    }
+
+    .nav_arr-right {
+        position: absolute;
+        top: 8px;
+        right: -2px;
+        rotate: 180deg;
+        z-index: 9999;
+        .nav_arr-right1 {
+            position: absolute;
+            top: -0.5px;
+            left: 1px;
+            width: 8px;
+            height: 1px;
+            background: #000000;
+            border-radius: 2px;
+            rotate: -43deg;
+        }
+        .nav_arr-right2 {
+            position: absolute;
+            top: 4px;
+            left: 1px;
+            width: 8px;
+            height: 1px;
+            background: #000000;
+            border-radius: 2px;
+            rotate: 45deg;
+        }
+    }
+}
 #cont-4 {
     .cont-4__block {
         display: flex;
@@ -1119,6 +1186,9 @@ $maxWidth: 1440;
         }
         input:not(:first-child) {
             margin: 25px 0 0 0;
+        }
+        input:last-child {
+            margin: 64px 0 0 0;
         }
     }
     h4 {
@@ -3097,6 +3167,16 @@ main img {
         width: 100%;
     }
     @media (max-width: 1054px) {
+        .myaccount {
+            .myaccount_nav {
+                ul {
+                    li {
+                        padding: 0 35px 0 0;
+                    }
+                }
+            }
+        }
+
         .cont-5_block {
             width: 50%;
         }
@@ -3200,6 +3280,9 @@ main img {
     }
 }
 @media (max-width: 901px) {
+    .nav_arrow_block {
+        display: block;
+    }
     .cont-5_block {
         width: 60%;
     }
@@ -4683,6 +4766,15 @@ main img {
     }
 }
 @media (max-width: 320px) {
+    .myaccount {
+        .myaccount_nav {
+            ul {
+                li {
+                    padding: 0 24px 0 0;
+                }
+            }
+        }
+    }
     .price__head {
         padding: 35px 0 12px 0;
         line-height: 0;

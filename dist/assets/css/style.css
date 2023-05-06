@@ -1824,13 +1824,18 @@ a {
 }
 
 .myaccount .myaccount_nav {
-    width: 100%;
+    position: relative;
+    width: 94%;
+    overflow-x: scroll;
+    z-index: 12;
 }
 
 .myaccount .myaccount_nav ul {
+    width: 899px;
     display: flex;
     list-style: none;
     padding: 64px 0 34px 0;
+    margin-left: 25px;
     border-bottom: 1px solid #d8d8d8;
 }
 
@@ -1862,6 +1867,10 @@ a {
     padding: 0 0 32px 0;
     border-bottom: 2px solid #000000;
     color: #000000;
+}
+
+.myaccount .myaccount_nav::-webkit-scrollbar {
+    display: none;
 }
 
 .myaccount .nav_block_content {
@@ -1963,6 +1972,71 @@ a {
 
 .myaccount .nav_content2_table .nav_content2_table_item:not(:last-child) {
     border-bottom: 1.5px solid #d8d8d8;
+}
+
+.nav_arrow_block {
+    display: none;
+    position: relative;
+    top: -70px;
+}
+
+.nav_arrow_block .nav_arr-left {
+    position: absolute;
+    top: 2px;
+    left: -10px;
+    z-index: 13;
+}
+
+.nav_arrow_block .nav_arr-left .nav_arr-left1 {
+    position: absolute;
+    top: -0.5px;
+    left: 1px;
+    width: 8px;
+    height: 1px;
+    background: #000000;
+    border-radius: 2px;
+    rotate: -43deg;
+}
+
+.nav_arrow_block .nav_arr-left .nav_arr-left2 {
+    position: absolute;
+    top: 4px;
+    left: 1px;
+    width: 8px;
+    height: 1px;
+    background: #000000;
+    border-radius: 2px;
+    rotate: 45deg;
+}
+
+.nav_arrow_block .nav_arr-right {
+    position: absolute;
+    top: 8px;
+    right: -2px;
+    rotate: 180deg;
+    z-index: 9999;
+}
+
+.nav_arrow_block .nav_arr-right .nav_arr-right1 {
+    position: absolute;
+    top: -0.5px;
+    left: 1px;
+    width: 8px;
+    height: 1px;
+    background: #000000;
+    border-radius: 2px;
+    rotate: -43deg;
+}
+
+.nav_arrow_block .nav_arr-right .nav_arr-right2 {
+    position: absolute;
+    top: 4px;
+    left: 1px;
+    width: 8px;
+    height: 1px;
+    background: #000000;
+    border-radius: 2px;
+    rotate: 45deg;
 }
 
 #cont-4 .cont-4__block {
@@ -2159,6 +2233,10 @@ a {
 
 .cont-5_block form input:not(:first-child) {
     margin: 25px 0 0 0;
+}
+
+.cont-5_block form input:last-child {
+    margin: 64px 0 0 0;
 }
 
 .cont-5_block h4 {
@@ -4754,6 +4832,10 @@ main img {
 }
 
 @media (max-width: 1130px) and (max-width: 1054px) {
+    .myaccount .myaccount_nav ul li {
+        padding: 0 35px 0 0;
+    }
+
     .cont-5_block {
         width: 50%;
     }
@@ -4870,6 +4952,10 @@ main img {
 }
 
 @media (max-width: 901px) {
+    .nav_arrow_block {
+        display: block;
+    }
+
     .cont-5_block {
         width: 60%;
     }
@@ -7023,6 +7109,10 @@ main img {
 }
 
 @media (max-width: 320px) {
+    .myaccount .myaccount_nav ul li {
+        padding: 0 24px 0 0;
+    }
+
     .price__head {
         padding: 35px 0 12px 0;
         line-height: 0;

@@ -9,7 +9,6 @@ tabs.forEach((item) => {
         if (target.tagName !== 'A') return;
         const id = event.target.getAttribute('href').replace('#', '');
         document.getElementById(id).classList.add('item_content_activ');
-        console.log(document.getElementById(id));
         item.classList.add('activ');
     });
 });
@@ -34,7 +33,33 @@ submitForm.addEventListener('click', (e) => {
     for (let [key, value] of formData) {
         a.key = value;
     }
-    console.log(a);
+});
+
+const arrTabs = document.querySelector('.nav_arrow_block');
+arrTabs.addEventListener('click', (e) => {
+    let sum = 0;
+    let target = e.target;
+    const allLi = document.querySelectorAll('.myaccount_nav li');
+    allLi.forEach((item) => {
+        let a = item.clientWidth;
+        sum = sum + a;
+    });
+    const nav = document.querySelector('.myaccount_nav');
+    console.log(nav);
+    if (target.closest('.nav_arr-left')) {
+        nav.scrollLeft -= sum / 3;
+        console.log(nav.scrollLeft);
+    }
+    if (target.closest('.nav_arr-right')) {
+        if (nav.scrollLeft < 400) {
+            nav.scrollLeft += sum / 3;
+            console.log(nav.scrollLeft);
+        }
+        if (nav.scrollLeft > 400) {
+            nav.scrollLeft = 360;
+            console.log(nav.scrollLeft);
+        }
+    }
 });
 
 document.querySelectorAll('.myaccount_nav a')[4].click();
