@@ -39,27 +39,23 @@ const arrTabs = document.querySelector('.nav_arrow_block');
 arrTabs.addEventListener('click', (e) => {
     let sum = 0;
     let target = e.target;
-    const allLi = document.querySelectorAll('.myaccount_nav li');
-    allLi.forEach((item) => {
-        let a = item.clientWidth;
-        sum = sum + a;
-    });
+    const allLi = document.querySelector('.myaccount_nav ul').clientWidth;
+
     const nav = document.querySelector('.myaccount_nav');
-    console.log(nav);
+    console.log(allLi);
     if (target.closest('.nav_arr-left')) {
-        nav.scrollLeft -= sum / 3;
+        nav.scrollLeft -= allLi / 3;
         console.log(nav.scrollLeft);
     }
     if (target.closest('.nav_arr-right')) {
         if (nav.scrollLeft < 400) {
-            nav.scrollLeft += sum / 3;
-            console.log(nav.scrollLeft);
+            nav.scrollLeft += allLi / 3;
         }
-        if (nav.scrollLeft > 400) {
-            nav.scrollLeft = 360;
+        if (nav.scrollLeft > 600) {
+            nav.scrollLeft = 600;
             console.log(nav.scrollLeft);
         }
     }
 });
 
-document.querySelectorAll('.myaccount_nav a')[4].click();
+document.querySelectorAll('.myaccount_nav a')[1].click();

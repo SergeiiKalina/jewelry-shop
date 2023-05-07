@@ -1831,8 +1831,9 @@ a {
 }
 
 .myaccount .myaccount_nav ul {
-    width: 899px;
-    display: flex;
+    width: 902px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
     list-style: none;
     padding: 64px 0 34px 0;
     margin-left: 25px;
@@ -1841,6 +1842,10 @@ a {
 
 .myaccount .myaccount_nav ul li {
     padding: 0 49px 0 0;
+}
+
+.myaccount .myaccount_nav ul .item_nav5 {
+    width: 154px;
 }
 
 .myaccount .myaccount_nav ul a {
@@ -1904,6 +1909,7 @@ a {
 }
 
 .myaccount .nav_block_content .item_content_activ {
+    width: 100%;
     display: block;
 }
 
@@ -2014,7 +2020,7 @@ a {
     top: 8px;
     right: -2px;
     rotate: 180deg;
-    z-index: 9999;
+    z-index: 13;
 }
 
 .nav_arrow_block .nav_arr-right .nav_arr-right1 {
@@ -2037,6 +2043,55 @@ a {
     background: #000000;
     border-radius: 2px;
     rotate: 45deg;
+}
+
+.mobile_download_block {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #d8d8d8;
+    padding: 0 0 38px 0;
+}
+
+.mobile_download_block .mobile_download_block_head {
+    list-style: none;
+    padding: 0;
+}
+
+.mobile_download_block .mobile_download_block_head li:not(:first-child) {
+    padding: 24px 0 0 0;
+}
+
+.mobile_download_block .mobile_download_block_order {
+    list-style: none;
+    padding: 0;
+}
+
+.mobile_download_block .mobile_download_block_order li {
+    text-align: right;
+}
+
+.mobile_download_block .mobile_download_block_order li:not(:first-child) {
+    padding: 24px 0 0 0;
+}
+
+.cont-3_mobile_download {
+    display: none;
+}
+
+.cont-2_mobile_download {
+    display: none;
+}
+
+#cont-3 {
+    position: relative;
+    width: 100%;
+    z-index: 13;
+}
+
+#cont-2 {
+    position: relative;
+    width: 100%;
+    z-index: 13;
 }
 
 #cont-4 .cont-4__block {
@@ -4832,8 +4887,12 @@ main img {
 }
 
 @media (max-width: 1130px) and (max-width: 1054px) {
-    .myaccount .myaccount_nav ul li {
-        padding: 0 35px 0 0;
+    #cont-3 {
+        overflow-x: scroll;
+    }
+
+    #cont-2 {
+        overflow-x: scroll;
     }
 
     .cont-5_block {
@@ -5214,6 +5273,20 @@ main img {
 }
 
 @media (max-width: 767px) {
+    #cont-4 .cont-4__block {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #cont-4 .cont4_form {
+        width: 100%;
+    }
+
+    #cont-4 .cont4_data {
+        width: 100%;
+        padding: 54px 0 0 0;
+    }
+
     .cont-5_block {
         width: 70%;
     }
@@ -6612,6 +6685,22 @@ main img {
 }
 
 @media (max-width: 700px) {
+    #cont-3 .nav_content2_table {
+        display: none;
+    }
+
+    #cont-3 .cont-3_mobile_download {
+        display: block;
+    }
+
+    #cont-2 .nav_content2_table {
+        display: none;
+    }
+
+    #cont-2 .cont-2_mobile_download {
+        display: block;
+    }
+
     .cont-5_block {
         width: 70%;
     }
@@ -6971,6 +7060,20 @@ main img {
 }
 
 @media (max-width: 460px) {
+    #cont-4 .cont4_form .cont4_form_name {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #cont-4 .cont4_form .cont4_form_name input {
+        width: 100%;
+    }
+
+    #cont-4 .cont4_form .cont4_form_name input:last-child {
+        margin: 10px 0 0 0;
+    }
+
     .cont-5_block {
         width: 95%;
     }
@@ -7109,10 +7212,6 @@ main img {
 }
 
 @media (max-width: 320px) {
-    .myaccount .myaccount_nav ul li {
-        padding: 0 24px 0 0;
-    }
-
     .price__head {
         padding: 35px 0 12px 0;
         line-height: 0;
